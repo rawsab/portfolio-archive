@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <section id="hero" className="py-16 text-left flex flex-col gap-6">
+    <section id="hero" className="pt-26 pb-6 text-left flex flex-col gap-6">
       <h1 className="font-acuminpro text-4xl sm:text-4xl text-[#2D2D2D] leading-[1.4] tracking-[-0.025em] mb-3">
         I am a{'  '}
         <span className="font-menocondensed-important italic text-[2.75rem] underline decoration-[#CFCFED] decoration-2 underline-offset-8">

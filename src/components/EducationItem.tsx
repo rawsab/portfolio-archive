@@ -21,7 +21,7 @@ export default function EducationItem({
     <div className="flex items-center w-full gap-x-4 mb-5">
       {/* Logo */}
       <div className="flex-shrink-0">
-        <div className="w-12 h-12 rounded-[12px] overflow-hidden mr-[5px]">
+        <div className="w-12 h-12 rounded-[12px] overflow-hidden mr-[5px] transition-transform duration-320 ease-in-out hover:scale-110">
           <img
             src={logo}
             alt={`${company} Logo`}
