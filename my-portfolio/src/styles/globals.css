@@ -14,7 +14,7 @@
   font-style: italic;
 }
 
-/* @font-face {
+@font-face {
   font-family: 'MenoBannerExtraCondensed';
   src: url('/fonts/meno-banner-extra-condensed-bold.otf') format('opentype');
   font-weight: 700;
@@ -33,7 +33,7 @@
   src: url('/fonts/meno-banner-semi-bold-italic.otf') format('opentype');
   font-weight: 600;
   font-style: italic;
-} */
+}
 
 @font-face {
   font-family: 'AcuminPro';
@@ -63,8 +63,7 @@
   font-style: italic;
 }
 
-
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -80,8 +79,8 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --background: #EFF1F7;
-    --foreground: #2D2D2D;
+    --background: #eff1f7;
+    --foreground: #2d2d2d;
   }
 }
 
@@ -96,5 +95,15 @@ body {
     font-family: 'MenoBannerCondensed' !important;
     font-style: italic !important;
     font-weight: 400 !important;
+  }
+  .font-mbextracondensed-important {
+    font-family: 'MenoBannerExtraCondensed' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+  }
+  .font-mbsemibold-important {
+    font-family: 'MenoBannerSemiBold' !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
   }
 }
