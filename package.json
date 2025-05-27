@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "deploy": "npm run build && gh-pages -d out",
+    "build": "next build",
     "start": "next start",
+    "deploy": "npm run build && gh-pages -d out",
     "lint": "eslint . --ext .ts,.tsx",
     "format": "prettier --write ."
   },

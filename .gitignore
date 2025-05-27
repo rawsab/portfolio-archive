@@ -74,5 +74,13 @@ yarn-error.log
 .npm
 .yarn-integrity
 
+# dist
 /dist/
 /tmp/
+
+# vercel
+.vercel
+
+# tailwind
+/.tailwind-cache
+
