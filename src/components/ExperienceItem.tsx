@@ -1,3 +1,5 @@
+import ArrowUpRight from '../../public/icons/ArrowUpRight';
+
 type ExperienceItemProps = {
   company: string;
   position: string;
@@ -32,7 +34,7 @@ export default function ExperienceItem({
 
       {/* Company / Position */}
       <div className="flex flex-col justify-center flex-shrink-0 mr-[10px]">
-        <span className="text-[#2D2D2D] font-bold">{company}</span>
+        <span className="text-[#2D2D2D] font-bold">{company}</span>{' '}
         <span className="text-sm text-[#7B7B7B] mt-[0px]">{position}</span>
       </div>
 

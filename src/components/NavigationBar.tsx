@@ -1,6 +1,8 @@
+import ArrowUpRight from '../../public/icons/ArrowUpRight';
+
 export default function NavigationBar() {
   return (
-    <nav className="sticky top-0 z-50 bg-[#EFF1F7]/90 backdrop-blur-sm pt-2">
+    <nav className="sticky top-0 z-50 bg-[#EFF1F7]/90 backdrop-blur-[4px] pt-2">
       <div className="font-acuminpro tracking-[-0.025em] w-[60vw] max-w-[947px] mx-auto px-2 pb-2 pt-2 flex justify-between items-center border-b border-[#e0e0e0]">
         <div className="text-lg font-bold text-[#2D2D2D]">Rawsab Said</div>
 
@@ -10,60 +12,21 @@ export default function NavigationBar() {
             className="hover:underline inline-flex items-center gap-1"
           >
             Resume
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-3 h-3"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-              />
-            </svg>
+            <ArrowUpRight className="w-3 h-3 text-[#2D2D2D]" />
           </a>
           <a
             href="#projects"
             className="hover:underline inline-flex items-center gap-1"
           >
             Projects
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-3 h-3"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-              />
-            </svg>
+            <ArrowUpRight className="w-3 h-3 text-[#2D2D2D]" />
           </a>
           <a
             href="#contact"
             className="hover:underline inline-flex items-center gap-1"
           >
             Contact
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-3 h-3"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-              />
-            </svg>
+            <ArrowUpRight className="w-3 h-3 text-[#2D2D2D]" />
           </a>
           <a
             href="https://github.com/rawsab"
