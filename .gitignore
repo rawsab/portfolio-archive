@@ -43,7 +43,7 @@ next-env.d.ts
 # config files
 .eslintrc.js
 .prettierrc
-eslint.config.js
+eslint.config.mjs
 
 # vscode
 .vscode
