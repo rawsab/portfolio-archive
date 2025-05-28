@@ -8,5 +8,6 @@ export const educationData = [
     focus:
       'Data Structures & Algorithms, Object-Oriented Programming, Operating Systems, Databases',
     tools: '',
+    link: 'https://uwaterloo.ca',
   },
 ];

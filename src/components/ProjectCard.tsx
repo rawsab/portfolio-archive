@@ -14,7 +14,7 @@ export default function ProjectCard({
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="block rounded-xl border border-[#d5d5d5] p-5 transition-transform hover:scale-[1.02] hover:shadow-md/5 duration-300"
+      className="block rounded-xl border border-[#d5d5d5] p-4 transition-transform hover:scale-[1.02] hover:shadow-md/5 duration-300"
     >
       <div className="flex items-center gap-1 mb-2">
         <h3 className="text-lg font-semibold text-[#2D2D2D] tracking-[-0.025em]">

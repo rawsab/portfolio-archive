@@ -8,6 +8,7 @@ type ExperienceItemProps = {
   logo: string;
   focus: string;
   tools: string;
+  link: string;
 };
 
 export default function ExperienceItem({
@@ -18,18 +19,24 @@ export default function ExperienceItem({
   logo,
   focus,
   tools,
+  link,
 }: ExperienceItemProps) {
   return (
-    <div className="flex items-center w-full gap-x-4 mb-5">
+    <div className="flex items-center w-full gap-x-2 mb-5">
       {/* Logo */}
       <div className="flex-shrink-0">
-        <div className="w-12 h-12 rounded-[12px] overflow-hidden mr-[5px] transition-transform duration-320 ease-in-out hover:scale-110">
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-12 h-12 rounded-[12px] overflow-hidden mr-[5px] transition-transform duration-320 ease-in-out hover:scale-110"
+        >
           <img
             src={logo}
             alt={`${company} Logo`}
             className="w-full h-full object-cover"
           />
-        </div>
+        </a>
       </div>
 
       {/* Company / Position */}
@@ -40,7 +47,7 @@ export default function ExperienceItem({
 
       {/* Highlight */}
       <div className="flex-1">
-        <div className="h-15 px-4 flex items-center rounded-[12px] border border-[#d5d5d5] text-sm text-[#2D2D2D] max-w-[460px]">
+        <div className="min-h-[60px] px-4 py-2 flex items-center rounded-[12px] border border-[#d5d5d5] text-sm text-[#2D2D2D] max-w-[480px]">
           <div>
             <p className="font-bold text-[#7B7B7B]">{focus}</p>
             <p className="text-[#7B7B7B]">{tools}</p>
@@ -49,7 +56,7 @@ export default function ExperienceItem({
       </div>
 
       {/* Location / Date */}
-      <div className="flex flex-col justify-center flex-shrink-0 text-right ml-[10px]">
+      <div className="flex flex-col justify-center flex-shrink-0 text-right ml-[5px]">
         <span className="text-[#2D2D2D] font-regular">{location}</span>
         <span className="text-sm text-[#7B7B7B] mt-[0px]">{date}</span>
       </div>

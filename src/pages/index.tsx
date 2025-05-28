@@ -4,7 +4,7 @@ import ExperienceSection from '@/components/ExperienceSection';
 import ResearchSection from '@/components/ResearchSection';
 import EducationSection from '@/components/EducationSection';
 import ProjectsSection from '@/components/ProjectsSection';
-// import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
         <ResearchSection />
         <ProjectsSection />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

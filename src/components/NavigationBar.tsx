@@ -8,7 +8,7 @@ export default function NavigationBar() {
 
         <div className="flex items-center space-x-8 text-sm text-[#2D2D2D]">
           <a
-            href="#resume"
+            href="#experience"
             className="hover:underline inline-flex items-center gap-1"
           >
             Resume
@@ -22,7 +22,7 @@ export default function NavigationBar() {
             <ArrowUpRight className="w-3 h-3 text-[#2D2D2D]" />
           </a>
           <a
-            href="#contact"
+            href="mailto:rsaid@uwaterloo.ca"
             className="hover:underline inline-flex items-center gap-1"
           >
             Contact

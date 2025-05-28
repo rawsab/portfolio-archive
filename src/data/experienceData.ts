@@ -7,6 +7,7 @@ export const experienceData = [
     logo: '/logos/nodeapp.webp',
     focus: 'MLOps + Infrastructure',
     tools: 'Python, OpenAI API, Langchain, AWS, Pinecone',
+    link: 'https://node-app.com/',
   },
   {
     company: 'Dandelion Networks',
@@ -16,6 +17,7 @@ export const experienceData = [
     logo: '/logos/dandelion.jpeg',
     focus: 'Distributed Systems + Consensus Protocols',
     tools: 'Go, gRPC, BadgerDB, Java, React, D3.js, Spring Boot',
+    link: 'https://dandelionnet.io/',
   },
   {
     company: 'BlackBerry',
@@ -25,6 +27,7 @@ export const experienceData = [
     logo: '/logos/blackberry.jpeg',
     focus: 'Secure DevOps + Vulnerability Automation',
     tools: 'C#, ASP.NET Core, SQLite, Docker, GitLab CI/CD, Linux',
+    link: 'https://blackberry.com',
   },
   {
     company: 'Cypienta',
@@ -34,5 +37,6 @@ export const experienceData = [
     logo: '/logos/cypienta.png',
     focus: 'Full-Stack + Threat Intelligence',
     tools: 'Python, Django, Svelte, Cytoscape.js, SOC/SIEM',
+    link: 'https://cypienta.com',
   },
 ];
