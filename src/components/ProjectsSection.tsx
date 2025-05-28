@@ -31,7 +31,7 @@ const itemVariants = {
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="mt-16 w-full tracking-[-0.020em]">
+    <section id="projects" className="mt-[50px] w-full tracking-[-0.020em]">
       <motion.div
         initial="hidden"
         whileInView="show"

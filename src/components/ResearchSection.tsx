@@ -49,7 +49,7 @@ export default function ResearchSection() {
   }, []);
 
   return (
-    <section id="research" className="mt-10 w-full tracking-[-0.020em]">
+    <section id="research" className="mt-[50px] w-full tracking-[-0.020em]">
       <motion.div
         initial="hidden"
         whileInView="show"

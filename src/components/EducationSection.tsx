@@ -49,7 +49,7 @@ export default function EducationSection() {
   }, []);
 
   return (
-    <section id="education" className="mt-10 w-full tracking-[-0.020em]">
+    <section id="education" className="mt-[50px] w-full tracking-[-0.020em]">
       <motion.div
         initial="hidden"
         whileInView="show"
