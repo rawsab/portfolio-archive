@@ -47,7 +47,7 @@ export default function ExperienceItem({
 
       {/* Highlight */}
       <div className="flex-1">
-        <div className="min-h-[60px] px-4 py-2 flex items-center rounded-[12px] border border-[#d5d5d5] text-sm text-[#2D2D2D] max-w-[480px]">
+        <div className="min-h-[60px] px-4 py-2 flex items-center rounded-[12px] border border-[#d5d5d5] text-sm text-[#2D2D2D] max-w-[680px]">
           <div>
             <p className="font-bold text-[#7B7B7B]">{focus}</p>
             <p className="text-[#7B7B7B]">{tools}</p>
@@ -56,7 +56,7 @@ export default function ExperienceItem({
       </div>
 
       {/* Location / Date */}
-      <div className="flex flex-col justify-center flex-shrink-0 text-right ml-[5px]">
+      <div className="flex flex-col justify-center flex-shrink-0 text-right ml-[5px] min-w-[100px]">
         <span className="text-[#2D2D2D] font-regular">{location}</span>
         <span className="text-sm text-[#7B7B7B] mt-[0px]">{date}</span>
       </div>
