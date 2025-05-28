@@ -12,7 +12,7 @@ const headerVariants = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: 0, ease: 'easeOut' },
+    transition: { duration: 0.5, delay: 0, ease: 'easeOut' },
   },
 };
 
@@ -20,18 +20,26 @@ const containerVariants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.3,
-      delayChildren: 0.2,
+      staggerChildren: 0.08,
+      delayChildren: 0.05,
     },
   },
 };
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
-export default function EducationSection() {
+export default function EducationSection({
+  start = true,
+  onDone,
+  sectionRef,
+}: {
+  start?: boolean;
+  onDone?: () => void;
+  sectionRef?: any;
+}) {
   const [data, setData] = useState(
     typeof window !== 'undefined' && window.innerWidth <= 340
       ? educationDataCompact
@@ -49,11 +57,14 @@ export default function EducationSection() {
   }, []);
 
   return (
-    <section id="education" className="mt-[50px] w-full tracking-[-0.020em]">
+    <section
+      id="education"
+      className="mt-[50px] w-full tracking-[-0.020em]"
+      ref={sectionRef}
+    >
       <motion.div
         initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+        animate={start ? 'show' : 'hidden'}
         variants={headerVariants}
       >
         <h2 className="text-[1.6rem] font-regular text-[#2D2D2D] mb-2 flex items-center">
@@ -66,11 +77,17 @@ export default function EducationSection() {
       <motion.div
         variants={containerVariants}
         initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+        animate={start ? 'show' : 'hidden'}
+        className=""
       >
         {data.map((exp, index) => (
-          <motion.div key={index} variants={itemVariants}>
+          <motion.div
+            key={index}
+            variants={itemVariants}
+            {...(onDone && index === data.length - 1
+              ? { onAnimationStart: onDone }
+              : {})}
+          >
             <EducationItem {...exp} />
           </motion.div>
         ))}
