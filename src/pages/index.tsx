@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <NavigationBar />
-      <main className="w-[60vw] max-w-[947px] min-w-[852px] mx-auto min-h-screen pb-20 px-4">
+      <main className="w-full px-4 md:px-8 mx-auto min-h-screen pb-20 lg:w-[60vw] lg:max-w-[947px] lg:min-w-[852px] lg:px-0">
         <HeroSection />
         <ExperienceSection />
         <EducationSection />

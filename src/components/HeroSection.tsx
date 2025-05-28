@@ -4,39 +4,44 @@ import FadeInOnView, { fadeUpVariants } from './FadeInOnView';
 export default function HeroSection() {
   return (
     <FadeInOnView>
-      <section id="hero" className="pt-26 pb-6 text-left flex flex-col gap-6">
+      <section
+        id="hero"
+        className="pt-20 md:pt-26 pb-6 text-left flex flex-col gap-6"
+      >
         <motion.h1
           variants={fadeUpVariants}
-          className="font-acuminpro text-4xl sm:text-4xl text-[#2D2D2D] leading-[1.4] tracking-[-0.025em] mb-3"
+          className="font-acuminpro text-2xl sm:text-4xl text-[#2D2D2D] leading-[1.4] tracking-[-0.025em] mb-3"
         >
-          I am a{'  '}
-          <span className="font-menocondensed-important italic text-[2.75rem] underline decoration-[#CFCFED] decoration-2 underline-offset-8">
+          I am a{'\u00A0\u00A0'}
+          <span className="font-menocondensed-important italic text-[2rem] sm:text-[2.75rem] underline decoration-[#CFCFED] decoration-2 underline-offset-8">
             Software Engineer & Designer
           </span>
-          <br />
+          {'\u00A0\u00A0'}
+          <br className="hidden sm:block" />
           with experience building software across
-          <br />
-          <span className="font-menocondensed-important italic text-[2.75rem] underline decoration-[#CFCFED] decoration-2 underline-offset-8">
+          {'\u00A0\u00A0'}
+          <br className="hidden sm:block" />
+          <span className="font-menocondensed-important italic text-[2rem] sm:text-[2.75rem] underline decoration-[#CFCFED] decoration-2 underline-offset-8">
             security, fintech,
           </span>
           <span className="inline-block underline decoration-[#CFCFED] decoration-2 underline-offset-8">
             &nbsp;and&nbsp;&nbsp;
           </span>
-          <span className="font-menocondensed-important italic text-[2.75rem] underline decoration-[#CFCFED] decoration-2 underline-offset-8">
+          <span className="font-menocondensed-important italic text-[2rem] sm:text-[2.75rem] underline decoration-[#CFCFED] decoration-2 underline-offset-8">
             social
           </span>
-          {'  '}
+          {'\u00A0\u00A0'}
           industries.
         </motion.h1>
 
         <motion.p
           variants={fadeUpVariants}
-          className="text-[1.15rem] text-[#7B7B7B] max-w-[650px] tracking-[-0.010em] leading-snug"
+          className="text-base sm:text-[1.15rem] text-[#7B7B7B] max-w-[650px] tracking-[-0.010em] leading-snug"
         >
           I've worked across early-stage startups and scaling products,
           contributing to secure backend systems, real-time data flows, and
           AI-integrated features.
-          <br />
+          <br className="hidden sm:block" />
           Currently studying Software Engineering @ UWaterloo.
         </motion.p>
       </section>
