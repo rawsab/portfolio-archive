@@ -33,28 +33,25 @@ export default function NavigationBar() {
 
         {/* Mobile menu button */}
         <button
-          className="lg:hidden text-[#2D2D2D] p-2"
+          className="lg:hidden text-[#2D2D2D] p-2 relative w-9 h-9 flex flex-col justify-center items-center focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d={
-                isMenuOpen
-                  ? 'M6 18L18 6M6 6l12 12'
-                  : 'M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5'
-              }
-            />
-          </svg>
+          <span
+            className={`block absolute h-0.5 w-6 bg-[#2D2D2D] rounded transition-all duration-300 ease-in-out
+              ${isMenuOpen ? 'rotate-45 top-4' : 'top-2'}
+            `}
+          ></span>
+          <span
+            className={`block absolute h-0.5 w-6 bg-[#2D2D2D] rounded transition-all duration-300 ease-in-out
+              ${isMenuOpen ? 'opacity-0 left-2' : 'top-4'}
+            `}
+          ></span>
+          <span
+            className={`block absolute h-0.5 w-6 bg-[#2D2D2D] rounded transition-all duration-300 ease-in-out
+              ${isMenuOpen ? '-rotate-45 top-4' : 'top-6'}
+            `}
+          ></span>
         </button>
 
         {/* Desktop menu */}
