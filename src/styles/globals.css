@@ -111,3 +111,15 @@ body {
     font-weight: 600 !important;
   }
 }
+
+@media (max-width: 456px) {
+  .hide-456 {
+    display: none !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .hide-350 {
+    display: none !important;
+  }
+}

@@ -1,8 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { researchData } from '../data/researchData';
-import ExperienceItem from './ExperienceItem';
+import { useEffect, useState } from 'react';
+import { researchData as researchDataFull } from '../data/researchData';
+import { researchData as researchDataCompact } from '../data/researchDataCompact';
+import ResearchItem from './ResearchItem';
 import { Microscope } from 'lucide-react';
 
 const headerVariants = {
@@ -30,6 +32,22 @@ const itemVariants = {
 };
 
 export default function ResearchSection() {
+  const [data, setData] = useState(
+    typeof window !== 'undefined' && window.innerWidth <= 340
+      ? researchDataCompact
+      : researchDataFull,
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setData(
+        window.innerWidth <= 340 ? researchDataCompact : researchDataFull,
+      );
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <section id="research" className="mt-10 w-full tracking-[-0.020em]">
       <motion.div
@@ -51,9 +69,9 @@ export default function ResearchSection() {
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {researchData.map((exp, index) => (
+        {data.map((exp, index) => (
           <motion.div key={index} variants={itemVariants}>
-            <ExperienceItem {...exp} />
+            <ResearchItem {...exp} />
           </motion.div>
         ))}
       </motion.div>

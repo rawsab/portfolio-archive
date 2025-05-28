@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { educationData } from '../data/educationData';
+import { useEffect, useState } from 'react';
+import { educationData as educationDataFull } from '../data/educationData';
+import { educationData as educationDataCompact } from '../data/educationDataCompact';
 import EducationItem from './EducationItem';
 import { GraduationCap } from 'lucide-react';
 
@@ -30,6 +32,22 @@ const itemVariants = {
 };
 
 export default function EducationSection() {
+  const [data, setData] = useState(
+    typeof window !== 'undefined' && window.innerWidth <= 340
+      ? educationDataCompact
+      : educationDataFull,
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setData(
+        window.innerWidth <= 340 ? educationDataCompact : educationDataFull,
+      );
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <section id="education" className="mt-10 w-full tracking-[-0.020em]">
       <motion.div
@@ -51,7 +69,7 @@ export default function EducationSection() {
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {educationData.map((exp, index) => (
+        {data.map((exp, index) => (
           <motion.div key={index} variants={itemVariants}>
             <EducationItem {...exp} />
           </motion.div>

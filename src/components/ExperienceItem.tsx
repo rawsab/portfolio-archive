@@ -47,7 +47,7 @@ export default function ExperienceItem({
         </div>
 
         {/* Location / Date - Moved up on mobile */}
-        <div className="flex flex-col justify-center flex-shrink-0 text-right ml-auto md:hidden">
+        <div className="flex flex-col justify-center flex-shrink-0 text-right ml-auto md:hidden hide-350">
           <span className="text-[#2D2D2D] font-regular">{location}</span>
           <span className="text-sm text-[#7B7B7B] mt-[0px]">{date}</span>
         </div>
@@ -64,7 +64,7 @@ export default function ExperienceItem({
       </div>
 
       {/* Location / Date - Desktop */}
-      <div className="hidden md:flex flex-col justify-center flex-shrink-0 text-right ml-[5px] min-w-[100px]">
+      <div className="hidden md:flex flex-col justify-center flex-shrink-0 text-right ml-[5px] min-w-[100px] hide-350">
         <span className="text-[#2D2D2D] font-regular">{location}</span>
         <span className="text-sm text-[#7B7B7B] mt-[0px]">{date}</span>
       </div>
