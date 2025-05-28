@@ -53,7 +53,7 @@ export default function EducationItem({
 
       {/* Highlight */}
       <div className="flex-1 w-full md:w-auto">
-        <div className="min-h-[60px] px-4 py-2 flex items-center rounded-[12px] border border-[#d5d5d5] text-sm text-[#2D2D2D] max-w-[480px]">
+        <div className="min-h-[60px] px-4 py-2 flex items-center rounded-[12px] border border-[#d5d5d5] text-sm text-[#2D2D2D] max-w-[680px]">
           <div>
             <p className="text-[#7B7B7B] whitespace-pre-wrap">{focus}</p>
           </div>

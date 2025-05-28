@@ -2,9 +2,29 @@
 
 import { useState } from 'react';
 import ArrowUpRight from '../../public/icons/ArrowUpRight';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Animation variants
+  const dropdownVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.18,
+        when: 'beforeChildren',
+        staggerChildren: 0.07,
+      },
+    },
+    exit: { opacity: 0, y: -10, transition: { duration: 0.13 } },
+  };
+  const itemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.18 } },
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-[#EFF1F7]/90 backdrop-blur-[4px] pt-2">
@@ -41,24 +61,24 @@ export default function NavigationBar() {
         <div className="hidden lg:flex items-center space-x-8 text-sm text-[#2D2D2D]">
           <a
             href="#experience"
-            className="hover:underline inline-flex items-center gap-1"
+            className="hover:underline inline-flex items-center gap-1 group"
           >
             Resume
-            <ArrowUpRight className="w-3 h-3 text-[#2D2D2D]" />
+            <ArrowUpRight className="w-3 h-3 text-[#2D2D2D] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </a>
           <a
             href="#projects"
-            className="hover:underline inline-flex items-center gap-1"
+            className="hover:underline inline-flex items-center gap-1 group"
           >
             Projects
-            <ArrowUpRight className="w-3 h-3 text-[#2D2D2D]" />
+            <ArrowUpRight className="w-3 h-3 text-[#2D2D2D] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </a>
           <a
             href="mailto:rsaid@uwaterloo.ca"
-            className="hover:underline inline-flex items-center gap-1"
+            className="hover:underline inline-flex items-center gap-1 group"
           >
             Contact
-            <ArrowUpRight className="w-3 h-3 text-[#2D2D2D]" />
+            <ArrowUpRight className="w-3 h-3 text-[#2D2D2D] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </a>
           <a
             href="https://github.com/rawsab"
@@ -85,62 +105,74 @@ export default function NavigationBar() {
         </div>
 
         {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-[#EFF1F7] border-b border-[#e0e0e0] lg:hidden">
-            <div className="flex flex-col space-y-4 p-4 w-full">
-              <a
-                href="#experience"
-                className="hover:underline inline-flex items-center gap-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Resume
-                <ArrowUpRight className="w-3 h-3 text-[#2D2D2D]" />
-              </a>
-              <a
-                href="#projects"
-                className="hover:underline inline-flex items-center gap-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Projects
-                <ArrowUpRight className="w-3 h-3 text-[#2D2D2D]" />
-              </a>
-              <a
-                href="mailto:rsaid@uwaterloo.ca"
-                className="hover:underline inline-flex items-center gap-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-                <ArrowUpRight className="w-3 h-3 text-[#2D2D2D]" />
-              </a>
-              <div className="flex space-x-4">
-                <a
-                  href="https://github.com/rawsab"
-                  target="_blank"
-                  rel="noopener noreferrer"
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              key="dropdown"
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={dropdownVariants}
+              className="absolute top-full left-0 right-0 bg-[#EFF1F7] border-b border-[#e0e0e0] backdrop-blur-[4px] lg:hidden"
+            >
+              <div className="flex flex-col space-y-4 p-4 w-full">
+                <motion.a
+                  variants={itemVariants}
+                  href="#experience"
+                  className="hover:underline inline-flex items-center gap-1 group"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <img
-                    src="/icons/github-icon.svg"
-                    alt="GitHub"
-                    className="w-5 h-5 opacity-90 hover:opacity-100"
-                  />
-                </a>
-                <a
-                  href="https://linkedin.com/in/rawsabsaid"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  Resume
+                  <ArrowUpRight className="w-3 h-3 text-[#2D2D2D] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </motion.a>
+                <motion.a
+                  variants={itemVariants}
+                  href="#projects"
+                  className="hover:underline inline-flex items-center gap-1 group"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <img
-                    src="/icons/linkedin-icon.svg"
-                    alt="LinkedIn"
-                    className="w-6 h-6 opacity-90 hover:opacity-100"
-                  />
-                </a>
+                  Projects
+                  <ArrowUpRight className="w-3 h-3 text-[#2D2D2D] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </motion.a>
+                <motion.a
+                  variants={itemVariants}
+                  href="mailto:rsaid@uwaterloo.ca"
+                  className="hover:underline inline-flex items-center gap-1 group"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact
+                  <ArrowUpRight className="w-3 h-3 text-[#2D2D2D] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </motion.a>
+                <motion.div className="flex space-x-4" variants={itemVariants}>
+                  <a
+                    href="https://github.com/rawsab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <img
+                      src="/icons/github-icon.svg"
+                      alt="GitHub"
+                      className="w-5 h-5 opacity-90 hover:opacity-100"
+                    />
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/rawsabsaid"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <img
+                      src="/icons/linkedin-icon.svg"
+                      alt="LinkedIn"
+                      className="w-6 h-6 opacity-90 hover:opacity-100"
+                    />
+                  </a>
+                </motion.div>
               </div>
-            </div>
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );
