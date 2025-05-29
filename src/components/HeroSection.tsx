@@ -41,8 +41,7 @@ export default function HeroSection() {
         >
           I've worked across early-stage startups and scaling products,
           contributing to secure backend systems, real-time data flows, and
-          AI-integrated features.
-          <br className="hidden sm:block" />
+          AI-integrated features. <br className="hidden sm:block" />
           Currently studying Software Engineering @ UWaterloo.
         </motion.p>
         {/* Downwards arrow link */}
