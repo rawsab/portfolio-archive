@@ -49,7 +49,7 @@ export default function HeroSection() {
         <motion.div
           variants={fadeUpVariants}
           transition={{ delay: 0.4 }}
-          className="flex justify-center mt-6 mb-0"
+          className="flex justify-center mt-4 mb-2"
         >
           <a
             href="#experience"
