@@ -7,6 +7,7 @@ import ProjectsSection from '@/components/ProjectsSection';
 import Footer from '@/components/Footer';
 import { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import Head from 'next/head';
 
 function ResumeSections() {
   // InView hooks for each section
@@ -66,6 +67,13 @@ function ResumeSections() {
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Rawsab's Portfolio</title>
+        <meta
+          name="description"
+          content="Find out more about my experiences, education, and projects."
+        />
+      </Head>
       <NavigationBar />
       <main className="scroll-smooth w-full px-4 md:px-8 mx-auto min-h-screen pb-20 lg:w-[60vw] lg:max-w-[947px] lg:min-w-[852px] lg:px-0">
         <section id="hero" className="scroll-mt-20">
