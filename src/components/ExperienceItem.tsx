@@ -61,7 +61,7 @@ export default function ExperienceItem({
 
       {/* Highlight */}
       <div className="flex-1 w-full md:w-auto">
-        <div className="min-h-[60px] px-4 py-2 flex items-center rounded-[12px] border border-[var(--foreground)]/20 text-sm text-[var(--foreground)] max-w-[680px]">
+        <div className="min-h-[60px] px-4 py-2 flex items-center rounded-[12px] border border-[var(--foreground)]/20 text-sm text-[var(--foreground)] max-w-[720px]">
           <div>
             <p className="font-bold text-[var(--foreground)]/70">{focus}</p>
             <p className="text-[var(--foreground)]/70">{tools}</p>

@@ -37,7 +37,7 @@ export default function NavigationBar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-[var(--background)]/90 backdrop-blur-[4px] pt-2">
+    <nav className="sticky top-0 z-50 bg-[var(--background)]/90 backdrop-blur-[4px] pt-2 transition-colors duration-300">
       <div className="font-acuminpro tracking-[-0.025em] w-full px-4 md:px-8 mx-auto pb-2 pt-2 flex justify-between items-center border-b border-[var(--foreground)]/20 lg:w-[60vw] lg:max-w-[947px] lg:min-w-[852px] lg:px-0">
         <a
           href="#"
