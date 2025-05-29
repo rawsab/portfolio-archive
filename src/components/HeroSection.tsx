@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
 import FadeInOnView, { fadeUpVariants } from './FadeInOnView';
+import { ArrowDown } from 'lucide-react';
 
 export default function HeroSection() {
   return (
     <FadeInOnView>
       <section
         id="hero"
-        className="pt-20 md:pt-26 pb-6 text-left flex flex-col gap-6"
+        className="pt-20 md:pt-26 pb-4 text-left flex flex-col gap-6"
       >
         <motion.h1
           variants={fadeUpVariants}
@@ -44,6 +45,20 @@ export default function HeroSection() {
           <br className="hidden sm:block" />
           Currently studying Software Engineering @ UWaterloo.
         </motion.p>
+        {/* Downwards arrow link */}
+        <motion.div
+          variants={fadeUpVariants}
+          transition={{ delay: 0.4 }}
+          className="flex justify-center mt-6 mb-0"
+        >
+          <a
+            href="#experience"
+            aria-label="Scroll to experience section"
+            className="animate-bounce text-[#2D2D2D] hover:text-[#7B7B7B] focus:outline-none"
+          >
+            <ArrowDown className="w-8 h-8" strokeWidth={1} />
+          </a>
+        </motion.div>
       </section>
     </FadeInOnView>
   );

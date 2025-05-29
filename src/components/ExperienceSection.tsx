@@ -42,7 +42,7 @@ export default function ExperienceSection({
   return (
     <section
       id="experience"
-      className="mt-[50px] w-full tracking-[-0.020em]"
+      className="mt-[0px] w-full tracking-[-0.020em]"
       ref={sectionRef}
     >
       <motion.div

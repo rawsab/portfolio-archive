@@ -29,7 +29,13 @@ export default function NavigationBar() {
   return (
     <nav className="sticky top-0 z-50 bg-[#EFF1F7]/90 backdrop-blur-[4px] pt-2">
       <div className="font-acuminpro tracking-[-0.025em] w-full px-4 md:px-8 mx-auto pb-2 pt-2 flex justify-between items-center border-b border-[#e0e0e0] lg:w-[60vw] lg:max-w-[947px] lg:min-w-[852px] lg:px-0">
-        <div className="text-lg font-bold text-[#2D2D2D]">Rawsab Said</div>
+        <a
+          href="#"
+          className="text-lg font-bold text-[#2D2D2D] cursor-pointer hover:text-[#7B7B7B] outline-none"
+          aria-label="Scroll to top of page"
+        >
+          Rawsab Said
+        </a>
 
         {/* Mobile menu button */}
         <button
