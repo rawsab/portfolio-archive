@@ -67,11 +67,11 @@ export default function ResearchSection({
         animate={start ? 'show' : 'hidden'}
         variants={headerVariants}
       >
-        <h2 className="text-[1.6rem] font-regular text-[#2D2D2D] mb-2 flex items-center">
-          <Microscope className="w-[1em] h-[1em] mr-2 align-middle text-[#2D2D2D]" />
+        <h2 className="text-[1.6rem] font-regular text-[var(--foreground)] mb-2 flex items-center">
+          <Microscope className="w-[1em] h-[1em] mr-2 align-middle text-[var(--foreground)]" />
           Research
         </h2>
-        <div className="h-[1px] bg-[#e0e0e0] mb-5" />
+        <div className="h-[1px] bg-[var(--foreground)]/10 mb-5" />
       </motion.div>
 
       <motion.div

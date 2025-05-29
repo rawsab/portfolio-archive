@@ -123,3 +123,13 @@ body {
     display: none !important;
   }
 }
+
+.dark {
+  --background: #18181b;
+  --foreground: #f4f4f5;
+}
+
+html.dark img[alt='GitHub'],
+html.dark img[alt='LinkedIn'] {
+  filter: invert(1) brightness(1.6) grayscale(0.2);
+}

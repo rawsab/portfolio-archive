@@ -11,7 +11,7 @@ export default function HeroSection() {
       >
         <motion.h1
           variants={fadeUpVariants}
-          className="font-acuminpro text-2xl sm:text-4xl text-[#2D2D2D] leading-[1.4] tracking-[-0.025em] mb-3"
+          className="font-acuminpro text-2xl sm:text-4xl text-[var(--foreground)] leading-[1.4] tracking-[-0.025em] mb-3"
         >
           I am a{'\u00A0\u00A0'}
           <span className="font-menocondensed-important italic text-[2rem] sm:text-[2.75rem] underline decoration-[#CFCFED] decoration-2 underline-offset-8">
@@ -37,7 +37,7 @@ export default function HeroSection() {
 
         <motion.p
           variants={fadeUpVariants}
-          className="text-base sm:text-[1.15rem] text-[#7B7B7B] max-w-[650px] tracking-[-0.010em] leading-snug"
+          className="text-base sm:text-[1.15rem] text-[var(--foreground)]/70 max-w-[650px] tracking-[-0.010em] leading-snug"
         >
           I've worked across early-stage startups and scaling products,
           contributing to secure backend systems, real-time data flows, and
@@ -54,7 +54,7 @@ export default function HeroSection() {
           <a
             href="#experience"
             aria-label="Scroll to experience section"
-            className="animate-bounce text-[#2D2D2D] hover:text-[#7B7B7B] focus:outline-none"
+            className="animate-bounce text-[var(--foreground)] hover:text-[#7B7B7B] focus:outline-none"
           >
             <ArrowDown className="w-8 h-8" strokeWidth={1} />
           </a>

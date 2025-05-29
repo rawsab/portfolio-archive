@@ -1,11 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ArrowUpRight from '../../public/icons/ArrowUpRight';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Sun, Moon } from 'lucide-react';
 
 export default function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
 
   // Animation variants
   const dropdownVariants = {
@@ -27,61 +37,76 @@ export default function NavigationBar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#EFF1F7]/90 backdrop-blur-[4px] pt-2">
-      <div className="font-acuminpro tracking-[-0.025em] w-full px-4 md:px-8 mx-auto pb-2 pt-2 flex justify-between items-center border-b border-[#e0e0e0] lg:w-[60vw] lg:max-w-[947px] lg:min-w-[852px] lg:px-0">
+    <nav className="sticky top-0 z-50 bg-[var(--background)]/90 backdrop-blur-[4px] pt-2">
+      <div className="font-acuminpro tracking-[-0.025em] w-full px-4 md:px-8 mx-auto pb-2 pt-2 flex justify-between items-center border-b border-[var(--foreground)]/20 lg:w-[60vw] lg:max-w-[947px] lg:min-w-[852px] lg:px-0">
         <a
           href="#"
-          className="text-lg font-bold text-[#2D2D2D] cursor-pointer hover:text-[#7B7B7B] outline-none"
+          className="text-lg font-bold text-[var(--foreground)] cursor-pointer hover:text-[#7B7B7B] outline-none"
           aria-label="Scroll to top of page"
         >
           Rawsab Said
         </a>
 
-        {/* Mobile menu button */}
-        <button
-          className="lg:hidden text-[#2D2D2D] p-2 relative w-9 h-9 flex flex-col justify-center items-center focus:outline-none"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`block absolute h-0.5 w-6 bg-[#2D2D2D] rounded transition-all duration-300 ease-in-out
-              ${isMenuOpen ? 'rotate-45 top-4' : 'top-2'}
-            `}
-          ></span>
-          <span
-            className={`block absolute h-0.5 w-6 bg-[#2D2D2D] rounded transition-all duration-300 ease-in-out
-              ${isMenuOpen ? 'opacity-0 left-2' : 'top-4'}
-            `}
-          ></span>
-          <span
-            className={`block absolute h-0.5 w-6 bg-[#2D2D2D] rounded transition-all duration-300 ease-in-out
-              ${isMenuOpen ? '-rotate-45 top-4' : 'top-6'}
-            `}
-          ></span>
-        </button>
+        {/* Mobile/tablet right controls */}
+        <div className="flex items-center lg:hidden">
+          <button
+            onClick={() => setDarkMode((prev) => !prev)}
+            aria-label={
+              darkMode ? 'Switch to light mode' : 'Switch to dark mode'
+            }
+            className="p-2 rounded-full hover:bg-[var(--foreground)]/10 transition-colors mr-1"
+          >
+            {darkMode ? (
+              <Sun className="w-5 h-5 text-[#f4d35e]" />
+            ) : (
+              <Moon className="w-5 h-5 text-[var(--foreground)]" />
+            )}
+          </button>
+          <button
+            className="text-[var(--foreground)] p-2 relative w-9 h-9 flex flex-col justify-center items-center focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block absolute h-0.5 w-6 bg-[var(--foreground)] rounded transition-all duration-300 ease-in-out
+                ${isMenuOpen ? 'rotate-45 top-4' : 'top-2'}
+              `}
+            ></span>
+            <span
+              className={`block absolute h-0.5 w-6 bg-[var(--foreground)] rounded transition-all duration-300 ease-in-out
+                ${isMenuOpen ? 'opacity-0 left-2' : 'top-4'}
+              `}
+            ></span>
+            <span
+              className={`block absolute h-0.5 w-6 bg-[var(--foreground)] rounded transition-all duration-300 ease-in-out
+                ${isMenuOpen ? '-rotate-45 top-4' : 'top-6'}
+              `}
+            ></span>
+          </button>
+        </div>
 
         {/* Desktop menu */}
-        <div className="hidden lg:flex items-center space-x-8 text-sm text-[#2D2D2D]">
+        <div className="hidden lg:flex items-center space-x-8 text-sm text-[var(--foreground)]">
           <a
             href="#experience"
             className="hover:underline inline-flex items-center gap-1 group"
           >
             Resume
-            <ArrowUpRight className="w-3 h-3 text-[#2D2D2D] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+            <ArrowUpRight className="w-3 h-3 text-[var(--foreground)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </a>
           <a
             href="#projects"
             className="hover:underline inline-flex items-center gap-1 group"
           >
             Projects
-            <ArrowUpRight className="w-3 h-3 text-[#2D2D2D] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+            <ArrowUpRight className="w-3 h-3 text-[var(--foreground)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </a>
           <a
             href="mailto:rsaid@uwaterloo.ca"
             className="hover:underline inline-flex items-center gap-1 group"
           >
             Contact
-            <ArrowUpRight className="w-3 h-3 text-[#2D2D2D] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+            <ArrowUpRight className="w-3 h-3 text-[var(--foreground)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </a>
           <a
             href="https://github.com/rawsab"
@@ -105,6 +130,19 @@ export default function NavigationBar() {
               className="w-6 h-6 opacity-90 hover:opacity-100"
             />
           </a>
+          <button
+            onClick={() => setDarkMode((prev) => !prev)}
+            aria-label={
+              darkMode ? 'Switch to light mode' : 'Switch to dark mode'
+            }
+            className="p-2 -ml-[10px] rounded-full hover:bg-[var(--foreground)]/10 transition-colors"
+          >
+            {darkMode ? (
+              <Sun className="w-5 h-5 text-[#f4d35e]" />
+            ) : (
+              <Moon className="w-5 h-5 text-[var(--foreground)]" />
+            )}
+          </button>
         </div>
 
         {/* Mobile menu */}
@@ -116,7 +154,7 @@ export default function NavigationBar() {
               animate="visible"
               exit="exit"
               variants={dropdownVariants}
-              className="absolute top-full left-0 right-0 bg-[#EFF1F7] border-b border-[#e0e0e0] backdrop-blur-[4px] lg:hidden"
+              className="absolute top-full left-0 right-0 bg-[var(--background)] border-b border-[var(--foreground)]/20 backdrop-blur-[4px] lg:hidden"
             >
               <div className="flex flex-col space-y-4 p-4 w-full">
                 <motion.a
@@ -126,7 +164,7 @@ export default function NavigationBar() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Resume
-                  <ArrowUpRight className="w-3 h-3 text-[#2D2D2D] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  <ArrowUpRight className="w-3 h-3 text-[var(--foreground)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </motion.a>
                 <motion.a
                   variants={itemVariants}
@@ -135,7 +173,7 @@ export default function NavigationBar() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Projects
-                  <ArrowUpRight className="w-3 h-3 text-[#2D2D2D] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  <ArrowUpRight className="w-3 h-3 text-[var(--foreground)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </motion.a>
                 <motion.a
                   variants={itemVariants}
@@ -144,7 +182,7 @@ export default function NavigationBar() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Contact
-                  <ArrowUpRight className="w-3 h-3 text-[#2D2D2D] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  <ArrowUpRight className="w-3 h-3 text-[var(--foreground)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </motion.a>
                 <motion.div className="flex space-x-4" variants={itemVariants}>
                   <a
