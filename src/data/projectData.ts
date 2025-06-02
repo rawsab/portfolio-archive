@@ -1,5 +1,11 @@
 export const projects = [
   {
+    name: 'Patchly',
+    description:
+      'Codebase vulnerability scanner with automated CVE detection and GPT-4 context-aware fix generation.',
+    link: 'https://github.com/rawsab/patchly',
+  },
+  {
     name: 'NLP Phishing Detection',
     description:
       'A binary classification model that leverages Bidirectional LSTM and NLP techniques to detect phishing URLs.',
@@ -39,6 +45,6 @@ export const projects = [
     name: 'SecureCV',
     description:
       'Facial recognition security system featuring user management, SQL-based logging, and TTS alerts.',
-    link: 'https://github.com/rawsab/facial-recognition-opencv',
+    link: 'https://github.com/rawsab/SecureCV',
   },
 ];
