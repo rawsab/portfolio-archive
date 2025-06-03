@@ -14,7 +14,7 @@ export default function HeroSection() {
           className="font-acuminpro text-2xl sm:text-4xl text-[var(--foreground)] leading-[1.4] tracking-[-0.025em] mb-3"
         >
           I am a{'\u00A0\u00A0'}
-          <span className="font-menocondensed-important italic text-[2rem] sm:text-[2.75rem] underline decoration-[#CFCFED] decoration-2 underline-offset-8">
+          <span className="font-menocondensed-important italic text-[2rem] sm:text-[2.75rem] underline decoration-[var(--underline)] decoration-2 underline-offset-8">
             Software Engineer & Designer
           </span>
           {'\u00A0\u00A0'}
@@ -22,13 +22,13 @@ export default function HeroSection() {
           with experience building software across
           {'\u00A0\u00A0'}
           <br className="hidden sm:block" />
-          <span className="font-menocondensed-important italic text-[2rem] sm:text-[2.75rem] underline decoration-[#CFCFED] decoration-2 underline-offset-8">
+          <span className="font-menocondensed-important italic text-[2rem] sm:text-[2.75rem] underline decoration-[var(--underline)] decoration-2 underline-offset-8">
             security, fintech,
           </span>
-          <span className="inline-block underline decoration-[#CFCFED] decoration-2 underline-offset-8">
+          <span className="inline-block underline decoration-[var(--underline)] decoration-2 underline-offset-8">
             &nbsp;and&nbsp;&nbsp;
           </span>
-          <span className="font-menocondensed-important italic text-[2rem] sm:text-[2.75rem] underline decoration-[#CFCFED] decoration-2 underline-offset-8">
+          <span className="font-menocondensed-important italic text-[2rem] sm:text-[2.75rem] underline decoration-[var(--underline)] decoration-2 underline-offset-8">
             social
           </span>
           {'\u00A0\u00A0'}
