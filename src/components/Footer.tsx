@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="mt-4 py-6 text-sm text-[#7B7B7B] border-t border-[#e0e0e0]">
+    <footer className="mt-4 py-6 text-sm text-[var(--foreground)]/70 border-t border-[var(--foreground)]/10">
       <div className="font-acuminpro tracking-[-0.025em] w-full px-4 md:px-8 mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 lg:w-[60vw] lg:max-w-[947px] lg:min-w-[852px] lg:px-0">
         <p>
           &copy; {new Date().getFullYear()} Rawsab Said. All rights reserved.
