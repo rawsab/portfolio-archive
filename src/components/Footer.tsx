@@ -10,7 +10,7 @@ export default function Footer() {
             href="https://github.com/rawsab"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[#2D2D2D] transition-colors"
+            className="transition-colors hover:text-[#2D2D2D] dark:hover:text-[#f4f4f5]"
           >
             GitHub
           </a>
@@ -18,13 +18,13 @@ export default function Footer() {
             href="https://linkedin.com/in/rawsabsaid"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[#2D2D2D] transition-colors"
+            className="transition-colors hover:text-[#2D2D2D] dark:hover:text-[#f4f4f5]"
           >
             LinkedIn
           </a>
           <a
             href="mailto:rsaid@uwaterloo.ca"
-            className="hover:text-[#2D2D2D] transition-colors"
+            className="transition-colors hover:text-[#2D2D2D] dark:hover:text-[#f4f4f5]"
           >
             Email
           </a>

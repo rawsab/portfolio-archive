@@ -94,7 +94,7 @@ export default function NavigationBar() {
         </div>
 
         {/* Desktop menu */}
-        <div className="hidden lg:flex items-center space-x-8 text-sm text-[var(--foreground)]">
+        <div className="hidden lg:flex items-center space-x-6 text-sm text-[var(--foreground)]">
           <a
             href="#experience"
             className="hover:underline inline-flex items-center gap-1 group"
@@ -138,6 +138,21 @@ export default function NavigationBar() {
               className="w-6 h-6 opacity-90 hover:opacity-100"
             />
           </a>
+          <a
+            href="https://dribbble.com/rawsab"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/icons/dribbble-icon.svg"
+              alt="Dribbble"
+              className="w-5 h-5 opacity-90 hover:opacity-100 transition-colors"
+            />
+          </a>
+          <div
+            className="h-6 w-px bg-[var(--foreground)]/20 -ml-2 mr-4"
+            aria-hidden="true"
+          ></div>
           <button
             onClick={() => setDarkMode((prev) => !prev)}
             aria-label={
@@ -214,7 +229,19 @@ export default function NavigationBar() {
                     <img
                       src="/icons/linkedin-icon.svg"
                       alt="LinkedIn"
-                      className="w-6 h-6 opacity-90 hover:opacity-100"
+                      className="w-6 h-6 opacity-90 hover:opacity-100 -translate-y-[1.5px]"
+                    />
+                  </a>
+                  <a
+                    href="https://dribbble.com/rawsab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <img
+                      src="/icons/dribbble-icon.svg"
+                      alt="Dribbble"
+                      className="w-5 h-5 opacity-90 hover:opacity-100 transition-colors"
                     />
                   </a>
                 </motion.div>
