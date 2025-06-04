@@ -9,7 +9,7 @@ export const projects = [
     name: 'NLP Phishing Detection',
     description:
       'A binary classification model that leverages Bidirectional LSTM and NLP techniques to detect phishing URLs.',
-    link: 'https://github.com/rawsab/ai-malicious-url-detection-system',
+    link: 'https://github.com/rawsab/BiLSTM-Phishing-Detector',
   },
   {
     name: 'AI Chess',
