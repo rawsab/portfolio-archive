@@ -137,7 +137,8 @@ body {
 
 html.dark img[alt='GitHub'],
 html.dark img[alt='LinkedIn'],
-html.dark img[alt='Dribbble'] {
+html.dark img[alt='Dribbble'],
+html.dark img[alt='SE Webring'] {
   filter: invert(1) brightness(1.6) grayscale(0.2);
 }
 

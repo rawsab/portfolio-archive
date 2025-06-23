@@ -38,7 +38,7 @@ export const projects = [
   {
     name: 'MIPS Assembly Compiler',
     description:
-      'MIPS compiler with full lexical, syntax, and semantic analysis. Also includes code generation of simplified C.',
+      'MIPS compiler with full lexical, syntax, and semantic analysis. Includes code generation of simplified C.',
     link: 'https://github.com/rawsab',
   },
   {

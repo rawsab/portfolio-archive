@@ -28,6 +28,20 @@ export default function Footer() {
           >
             Email
           </a>
+          <a
+            href="https://se-webring.xyz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center transition-colors hover:text-[#2D2D2D] dark:hover:text-[#f4f4f5] ml-1"
+            aria-label="Software Engineering Webring"
+          >
+            <img
+              src="/icons/webring_logo.svg"
+              alt="SE Webring"
+              className="w-5 h-5"
+              style={{ display: 'inline', verticalAlign: 'middle' }}
+            />
+          </a>
         </div>
       </div>
     </footer>
