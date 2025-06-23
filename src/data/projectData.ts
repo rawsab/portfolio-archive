@@ -33,7 +33,13 @@ export const projects = [
     name: 'EduRAG Tutor',
     description:
       'LLM-based tutor platform for querying lecture notes with a custom retrieval-augmented generation architecture.',
-    link: 'https://github.com/rawsab',
+    link: 'https://github.com/rawsab/eduRAG-chatbot',
+  },
+  {
+    name: 'DeenBoard',
+    description:
+      'Personalized Islamic homepage Chrome extension with prayer times, calendar integration, and daily widgets.',
+    link: 'https://github.com/rawsab/deenboard',
   },
   {
     name: 'MIPS Assembly Compiler',
