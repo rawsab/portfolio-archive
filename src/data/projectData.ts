@@ -12,6 +12,30 @@ export const projects = [
     link: 'https://github.com/rawsab/BiLSTM-Phishing-Detector',
   },
   {
+    name: 'Questporter',
+    description:
+      'A tool to seamlessly export University of Waterloo Quest class schedules to any calendar application.',
+    link: 'https://github.com/rawsab/quest-schedule-exporter',
+  },
+  {
+    name: 'DeenBoard',
+    description:
+      'Personalized Islamic homepage Chrome extension with prayer times, calendar integration, and daily widgets.',
+    link: 'https://github.com/rawsab/deenboard',
+  },
+  {
+    name: 'EduRAG Tutor',
+    description:
+      'LLM-based tutor platform for querying lecture notes with a custom retrieval-augmented generation architecture.',
+    link: 'https://github.com/rawsab/eduRAG-chatbot',
+  },
+  {
+    name: 'CSVise CLI Tool',
+    description:
+      'CLI tools for schema inference, custom format validation, and regex-based field-level analysis of CSV/XLSX files.',
+    link: 'https://github.com/rawsab/csvise-cli-tool',
+  },
+  {
     name: 'AI Chess',
     description:
       'Fully featured CLI/X11 chess engine with AI opponents using multi-level heuristic-based decision making.',
@@ -22,24 +46,6 @@ export const projects = [
     description:
       'Database-driven P2P car rental platform featuring web-scraped datasets and data integrity validation.',
     link: 'https://github.com/rawsab/Rent-A-Car',
-  },
-  {
-    name: 'CSVise CLI Tool',
-    description:
-      'CLI tools for schema inference, custom format validation, and regex-based field-level analysis of CSV/XLSX files.',
-    link: 'https://github.com/rawsab/csvise-cli-tool',
-  },
-  {
-    name: 'EduRAG Tutor',
-    description:
-      'LLM-based tutor platform for querying lecture notes with a custom retrieval-augmented generation architecture.',
-    link: 'https://github.com/rawsab/eduRAG-chatbot',
-  },
-  {
-    name: 'DeenBoard',
-    description:
-      'Personalized Islamic homepage Chrome extension with prayer times, calendar integration, and daily widgets.',
-    link: 'https://github.com/rawsab/deenboard',
   },
   {
     name: 'MIPS Assembly Compiler',
