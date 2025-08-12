@@ -73,10 +73,60 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Rawsab's Portfolio</title>
+        <title>Rawsab Said</title>
         <meta
           name="description"
-          content="Explore Rawsab's portfolio, including software projects, education, and professional experience."
+          content="Software Engineering student at the University of Waterloo with experience across startups and scaling products. Explore my projects and work showcased on this site."
+        />
+        <meta name="keywords" content="software developer, AI, web development, React, TypeScript, Next.js, portfolio, Rawsab, Patchly, Questporter, DeenBoard, Waterloo, University of Waterloo, software engineering, startups, scaling products" />
+        <meta name="author" content="Rawsab Said" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://rawsab.com" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Rawsab Said",
+              "jobTitle": "Software Engineer",
+              "description": "Software Engineering student at the University of Waterloo with experience across startups and scaling products. Explore my projects and work showcased on this site.",
+              "url": "https://rawsab.com",
+              "sameAs": [
+                "https://github.com/rawsab",
+                "https://linkedin.com/in/rawsab",
+                "https://instagram.com/rrawsab"
+              ],
+              "knowsAbout": [
+                "Software Development",
+                "Artificial Intelligence",
+                "Web Development",
+                "Product Development",
+                "Startups",
+                "Scaling Products",
+                "Automation",
+                "Blockchain",
+                "Cryptocurrency",
+                "Distributed Systems",
+                "Computer Science",
+                "Backend Development",
+                "Artificial Intelligence",
+                "Machine Learning",
+                "Data Science",
+                "Frontend Development",
+                "Full Stack Development",
+                "Cloud Computing",
+                "DevOps",
+                "Software Engineering",
+                "React",
+                "TypeScript",
+                "Next.js"
+              ]
+            })
+          }}
         />
       </Head>
       <NavigationBar />
