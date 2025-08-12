@@ -243,7 +243,7 @@ export default function NavigationBar() {
                     />
                   </a>
                   <a
-                    href="https://instagram.com/rawsab"
+                    href="https://instagram.com/rrawsab"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsMenuOpen(false)}
