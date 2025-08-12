@@ -1,15 +1,27 @@
 export const projects = [
   {
+    name: 'Patchly',
+    description:
+      'Codebase vulnerability scanner with automated CVE detection and GPT-4 context-aware fix generation.',
+    link: 'https://github.com/rawsab/patchly',
+  },
+  {
     name: 'NLP Phishing Detection',
     description:
       'A binary classification model that leverages Bidirectional LSTM and NLP techniques to detect phishing URLs.',
     link: 'https://github.com/rawsab/BiLSTM-Phishing-Detector',
   },
   {
-    name: 'AI Chess',
+    name: 'Questporter',
     description:
-      'Fully featured CLI/X11 chess engine with AI opponents using multi-level heuristic-based decision making.',
-    link: 'https://github.com/rawsab/chess-engine-cpp',
+      'A tool to seamlessly export University of Waterloo Quest class schedules to any calendar application.',
+    link: 'https://github.com/rawsab/quest-schedule-exporter',
+  },
+  {
+    name: 'DeenBoard',
+    description:
+      'Personalized Islamic homepage Chrome extension with prayer times, calendar integration, and daily widgets.',
+    link: 'https://github.com/rawsab/deenboard',
   },
   {
     name: 'EduRAG Tutor',
@@ -24,10 +36,10 @@ export const projects = [
     link: 'https://github.com/rawsab/csvise-cli-tool',
   },
   {
-    name: 'Consensus Network Simulator',
+    name: 'AI Chess',
     description:
-      'Simulation platform for consensus protocols with blockchain modeling and real-time state tracking.',
-    link: 'https://github.com/rawsab/consensus-network-sim',
+      'Fully featured CLI/X11 chess engine with AI opponents using multi-level heuristic-based decision making.',
+    link: 'https://github.com/rawsab/chess-engine-cpp',
   },
   {
     name: 'Rent-a-Car',

@@ -26,22 +26,21 @@ const FloatingBottomGradient = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const projectsSection = document.getElementById('projects');
-      if (!projectsSection) return;
+      const footer = document.querySelector('footer');
+      if (!footer) return;
 
-      const projectsTop = projectsSection.offsetTop;
-      const scrollY = window.scrollY;
+      const footerRect = footer.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Calculate opacity based on scroll position
-      // Full opacity (1) when above projects section
-      // Fade to 0 when scrolling past projects section
-      if (scrollY < projectsTop - windowHeight) {
+      // Calculate opacity based on footer visibility
+      // Full opacity (1) when footer is not visible
+      // Fade to 0 when footer becomes visible
+      if (footerRect.top > windowHeight) {
         setOpacity(1);
       } else {
-        const fadeStart = projectsTop - windowHeight;
-        const fadeEnd = projectsTop;
-        const fadeProgress = Math.max(0, Math.min(1, (scrollY - fadeStart) / (fadeEnd - fadeStart)));
+        const fadeStart = windowHeight;
+        const fadeEnd = windowHeight - footerRect.height;
+        const fadeProgress = Math.max(0, Math.min(1, (fadeStart - footerRect.top) / (fadeStart - fadeEnd)));
         setOpacity(1 - fadeProgress);
       }
     };

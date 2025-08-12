@@ -1,11 +1,11 @@
 export default function Footer() {
   return (
     <footer className="mt-4 py-6 text-sm text-[var(--foreground)]/70 border-t border-[var(--foreground)]/10">
-      <div className="font-acuminpro tracking-[-0.025em] w-full px-4 md:px-8 mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 lg:w-[60vw] lg:max-w-[947px] lg:min-w-[852px] lg:px-0">
+      <div className="font-acuminpro tracking-[-0.025em] w-full px-4 md:px-8 mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 lg:w-full lg:min-w-[852px] lg:px-8">
         <p>
           &copy; {new Date().getFullYear()} Rawsab Said. All rights reserved.
         </p>
-        <div className="flex space-x-4 gap-4">
+        <div className="flex space-x-4 gap-2 md:gap-4">
           <a
             href="https://github.com/rawsab"
             target="_blank"
@@ -42,7 +42,17 @@ export default function Footer() {
               style={{ display: 'inline', verticalAlign: 'middle' }}
             />
           </a>
+          {/* Updated timestamp with green ping */}
+          <div className="items-center gap-3 pl-2 hidden min-[790px]:flex">
+            <div className="relative">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
+              <div className="absolute top-0 left-0 w-2 h-2 bg-green-500 rounded-full"></div>
+            </div>
+            <span className="text-xs text-[var(--foreground)]/60 font-google-sans-code">UPDATED 12/08/2025</span>
+          </div>
         </div>
+        
+        
       </div>
     </footer>
   );

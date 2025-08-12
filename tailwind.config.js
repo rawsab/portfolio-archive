@@ -8,6 +8,7 @@ module.exports = {
         acuminpro: ['AcuminPro', 'sans-serif'],
         mbextracondensed: ['MenoBannerExtraCondensed', 'serif'],
         mbsemibold: ['MenoBannerSemiBold', 'serif'],
+        'google-sans-code': ['Google Sans Code', 'monospace'],
       },
     },
   },
