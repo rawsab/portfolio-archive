@@ -49,6 +49,7 @@ export default function FeaturedProjects() {
             variants={fadeUpVariants}
             onMouseEnter={() => setHoveredProject(project.id)}
             onMouseLeave={() => setHoveredProject(null)}
+            onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
           >
             {/* 3:2 aspect ratio project image */}
             <div className="relative overflow-hidden rounded-lg border border-[var(--foreground)]/20 shadow-sm hover:shadow-md transition-all duration-300">
