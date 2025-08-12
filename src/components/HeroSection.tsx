@@ -7,11 +7,11 @@ export default function HeroSection() {
     <FadeInOnView>
       <section
         id="hero"
-        className="pt-20 md:pt-26 pb-4 text-left flex flex-col gap-6"
+        className="pt-10 md:pt-16 pb-4 text-left flex flex-col gap-6"
       >
         <motion.h1
           variants={fadeUpVariants}
-          className="font-acuminpro text-2xl sm:text-4xl text-[var(--foreground)] leading-[1.4] tracking-[-0.025em] mb-3"
+          className="font-acuminpro text-2xl sm:text-4xl text-[var(--foreground)] leading-[1.2] tracking-[-0.025em] mb-3"
         >
           I am a{'\u00A0\u00A0'}
           <span className="font-menocondensed-important italic text-[2rem] sm:text-[2.75rem] underline decoration-[var(--underline)] decoration-2 underline-offset-8">
@@ -48,7 +48,7 @@ export default function HeroSection() {
         <motion.div
           variants={fadeUpVariants}
           transition={{ delay: 0.4 }}
-          className="flex justify-center mt-4 mb-2"
+          className="flex justify-center mt-2 mb-0"
         >
           <a
             href="#experience"

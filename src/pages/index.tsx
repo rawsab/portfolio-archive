@@ -4,6 +4,7 @@ import ExperienceSection from '@/components/ExperienceSection';
 import ResearchSection from '@/components/ResearchSection';
 import EducationSection from '@/components/EducationSection';
 import ProjectsSection from '@/components/ProjectsSection';
+import FeaturedProjects from '@/components/FeaturedProjects';
 import Footer from '@/components/Footer';
 import FloatingBottomGradient from '@/components/FloatingBottomGradient';
 import { useState } from 'react';
@@ -65,6 +66,8 @@ function ResumeSections() {
   );
 }
 
+
+
 export default function Home() {
   return (
     <>
@@ -72,16 +75,24 @@ export default function Home() {
         <title>Rawsab's Portfolio</title>
         <meta
           name="description"
-          content="Find out more about my experiences, education, and projects."
+          content="Explore Rawsab's portfolio, including software projects, education, and professional experience."
         />
       </Head>
       <NavigationBar />
-      <main className="scroll-smooth w-full px-4 md:px-8 mx-auto min-h-screen pb-20 lg:w-[60vw] lg:max-w-[947px] lg:min-w-[852px] lg:px-0">
-        <section id="hero" className="scroll-mt-20">
-          <HeroSection />
-        </section>
-        <ResumeSections />
-      </main>
+      <div className="flex flex-col lg:flex-row px-4 md:px-8 mx-auto min-h-screen pb-14 lg:max-w-[1400px] lg:px-8 justify-between">
+        {/* Left Column - Main Content */}
+        <main className="scroll-smooth w-full lg:w-3/4 lg:max-w-[947px] lg:min-w-[650px] lg:mr-4">
+          <section id="hero" className="scroll-mt-20">
+            <HeroSection />
+          </section>
+          <ResumeSections />
+        </main>
+        
+        {/* Right Column - Featured Projects */}
+        <aside className="w-full lg:w-1/4 lg:max-w-[400px] lg:sticky lg:top-20 lg:h-fit lg:ml-4">
+          <FeaturedProjects />
+        </aside>
+      </div>
       <Footer />
       <FloatingBottomGradient />
     </>

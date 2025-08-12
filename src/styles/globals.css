@@ -67,6 +67,14 @@ html {
   font-style: italic;
 }
 
+@font-face {
+  font-family: 'GoogleSansCode';
+  src: url('/fonts/GoogleSansCode-VariableFont_wght.ttf') format('truetype');
+  font-weight: 300 800;
+  font-style: normal;
+}
+
+
 @import 'tailwindcss';
 
 :root {
@@ -114,6 +122,11 @@ body {
     font-family: 'MenoBannerSemiBold' !important;
     font-style: italic !important;
     font-weight: 600 !important;
+  }
+  .font-google-sans-code {
+    font-family: 'GoogleSansCode' !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
   }
 }
 

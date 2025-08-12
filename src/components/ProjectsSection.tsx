@@ -1,9 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import ProjectCard from './ProjectCard';
 import { projects } from '@/data/projectData';
-import { Folder } from 'lucide-react';
+import { Folder, ChevronDown, ChevronUp } from 'lucide-react';
 
 const headerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -38,6 +39,27 @@ export default function ProjectsSection({
   onDone?: () => void;
   sectionRef?: any;
 }) {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const [isSingleColumn, setIsSingleColumn] = useState(false);
+
+  // Check if we're in single column layout
+  useEffect(() => {
+    const checkLayout = () => {
+      const grid = document.querySelector('.projects-grid');
+      if (grid) {
+        const computedStyle = window.getComputedStyle(grid);
+        const gridTemplateColumns = computedStyle.gridTemplateColumns;
+        setIsSingleColumn(gridTemplateColumns.split(' ').length === 1);
+      }
+    };
+    
+    checkLayout();
+    window.addEventListener('resize', checkLayout);
+    return () => window.removeEventListener('resize', checkLayout);
+  }, []);
+
+  const displayedProjects = isSingleColumn && !showAllProjects ? projects.slice(0, 3) : projects;
+
   return (
     <section
       id="projects"
@@ -60,13 +82,13 @@ export default function ProjectsSection({
         variants={containerVariants}
         initial="hidden"
         animate={start ? 'show' : 'hidden'}
-        className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+        className="grid grid-cols-1 sm:grid-cols-2 gap-5 projects-grid"
       >
-        {projects.map((project, index) => (
+        {displayedProjects.map((project, index) => (
           <motion.div
             key={index}
             variants={itemVariants}
-            {...(onDone && index === projects.length - 1
+            {...(onDone && index === displayedProjects.length - 1
               ? { onAnimationStart: onDone }
               : {})}
           >
@@ -78,6 +100,43 @@ export default function ProjectsSection({
           </motion.div>
         ))}
       </motion.div>
+
+      {/* Show All/Less Toggle Button - Only show in single column layout */}
+      {isSingleColumn && (
+        <>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
+            className="flex justify-center mt-6"
+          >
+            <button
+              onClick={() => setShowAllProjects(!showAllProjects)}
+              className="flex items-center gap-2 text-[var(--foreground)] hover:text-[var(--foreground)]/70 transition-colors font-medium"
+            >
+              {showAllProjects ? (
+                <>
+                  Show Less
+                  <ChevronUp className="w-4 h-4" />
+                </>
+              ) : (
+                <>
+                  Show All
+                  <ChevronDown className="w-4 h-4" />
+                </>
+              )}
+            </button>
+          </motion.div>
+          
+          {/* Divider line */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            className="h-[1px] bg-[var(--foreground)]/10 mt-8"
+          />
+        </>
+      )}
     </section>
   );
 }
