@@ -43,13 +43,15 @@ export default function FeaturedProjects() {
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-6">
         {featuredProjects.map((project) => (
-          <motion.div
+          <motion.a
             key={project.id}
-            className="group cursor-pointer"
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group cursor-pointer block"
             variants={fadeUpVariants}
             onMouseEnter={() => setHoveredProject(project.id)}
             onMouseLeave={() => setHoveredProject(null)}
-            onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
           >
             {/* 3:2 aspect ratio project image */}
             <div className="relative overflow-hidden rounded-lg border border-[var(--foreground)]/20 shadow-sm hover:shadow-md transition-all duration-300">
@@ -89,7 +91,7 @@ export default function FeaturedProjects() {
             <p className="text-sm text-[var(--foreground)]/70 mt-1 line-clamp-2 tracking-[-0.025em]">
               {project.description}
             </p>
-          </motion.div>
+          </motion.a>
         ))}
       </div>
       
