@@ -89,8 +89,8 @@ export default function Home() {
           <ResumeSections />
         </main>
         
-        {/* Right Column - Featured Projects */}
-        <aside className="w-full lg:w-1/4 lg:max-w-[400px] lg:sticky lg:top-20 lg:h-fit lg:ml-4">
+        {/* Right Column - Featured Projects (Desktop only) */}
+        <aside className="hidden lg:block w-full lg:w-1/4 lg:max-w-[400px] lg:sticky lg:top-20 lg:h-fit lg:ml-4">
           <FeaturedProjects />
         </aside>
       </div>

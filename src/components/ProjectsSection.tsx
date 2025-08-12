@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import ProjectCard from './ProjectCard';
+import FeaturedProjects from './FeaturedProjects';
 import { projects } from '@/data/projectData';
 import { Folder, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -78,6 +79,17 @@ export default function ProjectsSection({
         <div className="h-[1px] bg-[var(--foreground)]/10 mb-5" />
       </motion.div>
 
+      {/* Featured Projects - Mobile only */}
+      <div className="lg:hidden mb-8">
+        <FeaturedProjects />
+      </div>
+
+      <motion.h2 
+        className="text-md font-bold mt-0 lg:hidden mb-4 text-left text-[var(--foreground)]/70 font-google-sans-code tracking-[-0.025em]"
+      >
+        OTHER PROJECTS
+      </motion.h2>
+
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -127,14 +139,6 @@ export default function ProjectsSection({
               )}
             </button>
           </motion.div>
-          
-          {/* Divider line */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: 0.3 }}
-            className="h-[1px] bg-[var(--foreground)]/10 mt-8"
-          />
         </>
       )}
     </section>

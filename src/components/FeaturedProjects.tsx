@@ -29,13 +29,13 @@ export default function FeaturedProjects() {
 
   return (
     <motion.div 
-      className="pt-4 sm:pt-8 lg:pt-4 font-acuminpro"
+      className="pt-0 lg:pt-4 font-acuminpro"
       variants={containerVariants}
       initial="hidden"
       animate="show"
     >
       <motion.h2 
-        className="text-md font-bold lg:mb-6 mb-4 text-center lg:text-left text-[var(--foreground)]/70 font-google-sans-code tracking-[-0.025em]"
+        className="text-md font-bold lg:mb-6 mb-4 text-left text-[var(--foreground)]/70 font-google-sans-code tracking-[-0.025em]"
         variants={fadeUpVariants}
       >
         FEATURED PROJECTS
@@ -92,8 +92,8 @@ export default function FeaturedProjects() {
         ))}
       </div>
       
-      <motion.div 
-        className="mt-6 pt-4 border-t border-[var(--foreground)]/20 md:text-left text-center"
+      {/* <motion.div 
+        className="mt-6 pt-4 border-t border-[var(--foreground)]/20 md:text-left max-md:hidden"
         variants={fadeUpVariants}
       >
         <a
@@ -115,7 +115,7 @@ export default function FeaturedProjects() {
             />
           </svg>
         </a>
-      </motion.div>
+      </motion.div> */}
     </motion.div>
   );
 }
