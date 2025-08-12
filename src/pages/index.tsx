@@ -5,6 +5,7 @@ import ResearchSection from '@/components/ResearchSection';
 import EducationSection from '@/components/EducationSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import Footer from '@/components/Footer';
+import FloatingBottomGradient from '@/components/FloatingBottomGradient';
 import { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Head from 'next/head';
@@ -82,6 +83,7 @@ export default function Home() {
         <ResumeSections />
       </main>
       <Footer />
+      <FloatingBottomGradient />
     </>
   );
 }

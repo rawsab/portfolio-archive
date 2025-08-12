@@ -9,12 +9,9 @@ export default function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
-  // Set initial mode based on system preference
+  // Set dark mode by default
   useEffect(() => {
-    const prefersDark =
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setDarkMode(prefersDark);
+    setDarkMode(true);
   }, []);
 
   useEffect(() => {
