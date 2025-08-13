@@ -29,6 +29,15 @@ export const featuredProjects: FeaturedProject[] = [
   },
   {
     id: '3',
+    title: 'CNSimulator', 
+    year: '2024',
+    description: 'Simulation platform for consensus protocols with blockchain modeling and real-time state tracking.',
+    image: '/cards/cnsim_card.png',
+    link: 'https://github.com/rawsab/consensus-network-sim',
+    tags: ['Python', 'D3.js', 'Java', 'Flask']
+  },
+  {
+    id: '4',
     title: 'DeenBoard', 
     year: '2025',
     description: 'A Muslim-centric homepage with prayer times, calendar sync, and daily widgets.',

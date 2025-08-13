@@ -24,12 +24,6 @@ export const projects = [
     link: 'https://github.com/rawsab/csvise-cli-tool',
   },
   {
-    name: 'Consensus Network Simulator',
-    description:
-      'Simulation platform for consensus protocols with blockchain modeling and real-time state tracking.',
-    link: 'https://github.com/rawsab/consensus-network-sim',
-  },
-  {
     name: 'Rent-a-Car',
     description:
       'Database-driven P2P car rental platform featuring web-scraped datasets and data integrity validation.',
