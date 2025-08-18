@@ -41,4 +41,10 @@ export const projects = [
       'Facial recognition security system featuring user management, SQL-based logging, and TTS alerts.',
     link: 'https://github.com/rawsab/SecureCV',
   },
+  {
+    name: 'FPGA-Based HVAC System',
+    description:
+      'An interactive FPGA-based HVAC system developed using behavioral VHDL, integrated onto existing hardware.',
+    link: 'https://github.com/rawsab/fpga-hvac-control-system',
+  },
 ];
