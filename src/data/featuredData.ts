@@ -16,7 +16,7 @@ export const featuredProjects: FeaturedProject[] = [
     description: 'Codebase vulnerability scanner with automated CVE detection and AI-powered fixes.',
     image: '/cards/patchly_card.png',
     link: 'https://github.com/rawsab/patchly',
-    tags: ['React', 'AI', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Shadcn UI', 'Supabase', 'Vercel']
+    tags: ['React', 'AI', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Supabase', 'Vercel']
   },
   {
     id: '2',
@@ -33,7 +33,7 @@ export const featuredProjects: FeaturedProject[] = [
     year: '2024',
     description: 'Simulation platform for consensus protocols with blockchain modeling and real-time state tracking.',
     image: '/cards/cnsim_card.png',
-    link: 'https://github.com/rawsab/consensus-network-sim',
+    link: 'https://github.com/rawsab/CNSim',
     tags: ['Python', 'D3.js', 'Java', 'Flask']
   },
   {
@@ -43,6 +43,6 @@ export const featuredProjects: FeaturedProject[] = [
     description: 'A Muslim-centric homepage with prayer times, calendar sync, and daily widgets.',
     image: '/cards/deenboard_card.png',
     link: 'https://github.com/rawsab/deenboard',
-    tags: ['React Native', 'Firebase', 'Redux']
+    tags: ['React', 'Tailwind CSS', 'Webpack', 'OAuth2']
   }
 ];
