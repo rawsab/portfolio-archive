@@ -18,16 +18,16 @@ export const projects = [
     link: 'https://github.com/rawsab/eduRAG-chatbot',
   },
   {
-    name: 'Aladhan MCP Server',
-    description:
-      'MCP server for accessing Islamic prayer times and calendar data via the Aladhan API, built with FastMCP.',
-    link: 'https://github.com/rawsab/aladhan-MCP-server',
-  },
-  {
     name: 'CSVise CLI Tool',
     description:
-      'CLI tools for schema inference, custom format validation, and regex-based field-level analysis of CSV/XLSX files.',
+      'PyPI package providing Rich-powered CLI tools for CSV/XLSX display, validation, statistical analysis, and cleaning.',
     link: 'https://github.com/rawsab/csvise-cli-tool',
+  },
+  {
+    name: 'Aladhan MCP Server',
+    description:
+      'MCP server for Islamic prayer times and calendar data via the Aladhan API. Built with FastMCP and released on PyPI.',
+    link: 'https://github.com/rawsab/aladhan-MCP-server',
   },
   {
     name: 'Rent-a-Car',
