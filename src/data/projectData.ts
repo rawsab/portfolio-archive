@@ -18,6 +18,12 @@ export const projects = [
     link: 'https://github.com/rawsab/eduRAG-chatbot',
   },
   {
+    name: 'Aladhan MCP Server',
+    description:
+      'MCP server for accessing Islamic prayer times and calendar data via the Aladhan API, built with FastMCP.',
+    link: 'https://github.com/rawsab/aladhan-MCP-server',
+  },
+  {
     name: 'CSVise CLI Tool',
     description:
       'CLI tools for schema inference, custom format validation, and regex-based field-level analysis of CSV/XLSX files.',
@@ -41,10 +47,10 @@ export const projects = [
       'Facial recognition security system featuring user management, SQL-based logging, and TTS alerts.',
     link: 'https://github.com/rawsab/SecureCV',
   },
-  {
-    name: 'FPGA-Based HVAC System',
-    description:
-      'An interactive FPGA-based HVAC system developed using behavioral VHDL, integrated onto existing hardware.',
-    link: 'https://github.com/rawsab/fpga-hvac-control-system',
-  },
+  // {
+  //   name: 'FPGA-Based HVAC System',
+  //   description:
+  //     'An interactive FPGA-based HVAC system developed using behavioral VHDL, integrated onto existing hardware.',
+  //   link: 'https://github.com/rawsab/fpga-hvac-control-system',
+  // },
 ];
