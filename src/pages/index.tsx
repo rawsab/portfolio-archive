@@ -8,6 +8,7 @@ import FeaturedProjects from '@/components/FeaturedProjects';
 import Footer from '@/components/Footer';
 import FloatingBottomGradient from '@/components/FloatingBottomGradient';
 import GlowCursor from '@/components/GlowCursor';
+import CaseStudiesPopup from '@/components/CaseStudiesPopup';
 import { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Head from 'next/head';
@@ -147,6 +148,7 @@ export default function Home() {
       <Footer />
       <FloatingBottomGradient />
       <GlowCursor />
+      <CaseStudiesPopup />
     </>
   );
 }

@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';
@@ -65,6 +66,21 @@ export default function CaseStudies({ caseStudies }: CaseStudiesProps) {
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <Head>
+        <title>Project Case Studies | Rawsab Said</title>
+        <meta name="description" content="A collection of project case studies exploring the intersection of design and engineering. Each case study breaks down the design process, technical decisions, and challenges behind the work." />
+        <meta name="keywords" content="case studies, design, engineering, projects, portfolio, Rawsab Said" />
+        <meta property="og:title" content="Project Case Studies | Rawsab Said" />
+        <meta property="og:description" content="A collection of project case studies exploring the intersection of design and engineering." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://rawsab.com/case-studies" />
+        <meta property="og:image" content="https://rawsab.com/og_image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Project Case Studies | Rawsab Said" />
+        <meta name="twitter:description" content="A collection of project case studies exploring the intersection of design and engineering." />
+        <meta name="twitter:image" content="https://rawsab.com/og_image.png" />
+        <link rel="canonical" href="https://rawsab.com/case-studies" />
+      </Head>
       <NavigationBar />
       
       <motion.main 

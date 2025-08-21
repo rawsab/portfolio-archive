@@ -44,7 +44,7 @@ export default function NavigationBar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-[var(--background)]/90 backdrop-blur-[4px] pt-2 transition-colors duration-300">
-      <div className="font-acuminpro tracking-[-0.025em] w-full px-4 md:px-8 mx-auto pb-2 pt-2 flex justify-between items-center border-b border-[var(--foreground)]/20 lg:max-w-full lg:px-8">
+      <div className="font-acuminpro tracking-[-0.025em] w-full px-4 md:px-8 mx-auto pb-2 pt-1 flex justify-between items-center border-b border-[var(--foreground)]/20 lg:max-w-full lg:px-8">
         <Link
           href="/"
           className="text-lg font-semibold text-[var(--foreground)] cursor-pointer hover:text-[var(--foreground)]/75 outline-none transition-all duration-300 ease-in-out"
