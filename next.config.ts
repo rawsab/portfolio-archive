@@ -1,5 +1,6 @@
 // next.config.ts
 import createMDX from '@next/mdx';
+import type { NextConfig } from 'next';
 
 const withMDX = createMDX({
   options: {
@@ -8,7 +9,7 @@ const withMDX = createMDX({
   },
 });
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   output: 'export', // enables static HTML export mode
   images: {
     unoptimized: true, // disable next/image optimization (required for static)
