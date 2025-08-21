@@ -46,7 +46,7 @@ export default function NavigationBar() {
       <div className="font-acuminpro tracking-[-0.025em] w-full px-4 md:px-8 mx-auto pb-2 pt-2 flex justify-between items-center border-b border-[var(--foreground)]/20 lg:max-w-full lg:px-8">
         <a
           href="#"
-          className="text-lg font-bold text-[var(--foreground)] cursor-pointer hover:text-[#7B7B7B] outline-none"
+          className="text-lg font-semibold text-[var(--foreground)] cursor-pointer hover:text-[var(--foreground)]/75 outline-none transition-all duration-300 ease-in-out"
           aria-label="Scroll to top of page"
         >
           Rawsab Said
