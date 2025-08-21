@@ -7,10 +7,53 @@ import Link from 'next/link';
 
 const CaseStudiesPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   // Toggle this to true for testing (shows popup every time)
   // Toggle this to false for production (shows popup only once)
-  const TESTING_MODE = false;
+  const TESTING_MODE = true;
+  
+  // Toggle this to true to test the video loading state
+  // Toggle this to false for normal video loading
+  const TEST_VIDEO_LOADING = false;
+
+  useEffect(() => {
+    if (TESTING_MODE) {
+      // Testing mode: show popup every time
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+      }, 1000);
+      
+      return () => clearTimeout(timer);
+    } else {
+      // Production mode: check if user has seen the popup before
+      const hasSeenPopup = localStorage.getItem('hasSeenCaseStudiesPopup');
+      
+      // Only show popup if user hasn't seen it before
+      if (!hasSeenPopup) {
+        const timer = setTimeout(() => {
+          setIsVisible(true);
+        }, 1000);
+        
+        return () => clearTimeout(timer);
+      }
+    }
+  }, []);
+
+  // Test video loading state
+  useEffect(() => {
+    if (TEST_VIDEO_LOADING && isVisible) {
+      // Force loading state to be visible for testing
+      setVideoLoaded(false);
+      
+      // Simulate video loading delay for testing
+      const timer = setTimeout(() => {
+        setVideoLoaded(true);
+      }, 5000); // 5 second delay to see the loading state
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible]);
 
   useEffect(() => {
     if (TESTING_MODE) {
@@ -76,26 +119,40 @@ const CaseStudiesPopup = () => {
             </button>
 
             {/* Content */}
-            <div className="p-8">
+            <div className="sm:p-8 p-4">
               {/* Text content */}
               <div className="text-center mb-6">
-                <h2 className="text-3xl md:text-4xl font-menocondensed-important text-[var(--foreground)] mb-2 mt-2">
+                <h2 className="text-3xl sm:text-4xl font-menocondensed-important text-[var(--foreground)] mb-2 mt-0">
                   Introducing Case Studies
                 </h2>
-                <p className="text-md md:text-lg text-[var(--foreground)]/70">
+                <p className="text-md sm:text-lg text-[var(--foreground)]/70">
                   Take a deeper dive into my projects with the new case studies page.
                 </p>
               </div>
 
               {/* Video */}
-              <div className="relative rounded-lg overflow-hidden bg-black">
+              <div className="relative rounded-lg overflow-hidden bg-black" style={{ maxHeight: '400px' }}>
+                {/* Placeholder */}
+                {!videoLoaded && (
+                  <div className="w-full h-full min-h-[300px] flex items-center justify-center bg-gradient-to-t from-black/70 to-black/30">
+                    <div className="text-center">
+                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-4"></div>
+                      <p className="text-white/70 text-sm">Loading video...</p>
+                    </div>
+                  </div>
+                )}
+                
+                {/* Video */}
                 <video
-                  autoPlay
+                  autoPlay={!TEST_VIDEO_LOADING}
                   loop
                   muted
                   playsInline
-                  className="w-full h-auto"
+                  className={`w-full h-auto transition-opacity duration-300 ${
+                    videoLoaded ? 'opacity-100' : 'opacity-0'
+                  }`}
                   style={{ maxHeight: '400px', objectFit: 'cover' }}
+                  onLoadedData={() => !TEST_VIDEO_LOADING && setVideoLoaded(true)}
                 >
                   <source src="/video/CaseFeatureDemo_15FPS.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
