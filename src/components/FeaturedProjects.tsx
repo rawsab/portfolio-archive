@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { featuredProjects, FeaturedProject } from '@/data/featuredData';
 
 export default function FeaturedProjects() {
@@ -43,16 +44,16 @@ export default function FeaturedProjects() {
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-6">
         {featuredProjects.map((project) => (
-          <motion.a
+          <Link
             key={project.id}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`/case-studies/${project.id}`}
             className="group cursor-pointer block"
-            variants={fadeUpVariants}
-            onMouseEnter={() => setHoveredProject(project.id)}
-            onMouseLeave={() => setHoveredProject(null)}
           >
+            <motion.div
+              variants={fadeUpVariants}
+              onMouseEnter={() => setHoveredProject(project.id)}
+              onMouseLeave={() => setHoveredProject(null)}
+            >
             {/* 3:2 aspect ratio project image */}
             <div className="relative overflow-hidden rounded-lg border border-[var(--foreground)]/20 shadow-sm hover:shadow-md transition-all duration-300">
               <div className="aspect-[3/2] relative overflow-hidden">
@@ -91,7 +92,8 @@ export default function FeaturedProjects() {
             <p className="text-sm text-[var(--foreground)]/70 mt-1 line-clamp-2 tracking-[-0.025em]">
               {project.description}
             </p>
-          </motion.a>
+            </motion.div>
+          </Link>
         ))}
       </div>
       
