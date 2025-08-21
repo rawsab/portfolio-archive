@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import ArrowUpRight from '../../public/icons/ArrowUpRight';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Sun, Moon } from 'lucide-react';
@@ -44,13 +45,13 @@ export default function NavigationBar() {
   return (
     <nav className="sticky top-0 z-50 bg-[var(--background)]/90 backdrop-blur-[4px] pt-2 transition-colors duration-300">
       <div className="font-acuminpro tracking-[-0.025em] w-full px-4 md:px-8 mx-auto pb-2 pt-2 flex justify-between items-center border-b border-[var(--foreground)]/20 lg:max-w-full lg:px-8">
-        <a
-          href="#"
-          className="text-lg font-bold text-[var(--foreground)] cursor-pointer hover:text-[#7B7B7B] outline-none"
+        <Link
+          href="/"
+          className="text-lg font-semibold text-[var(--foreground)] cursor-pointer hover:text-[var(--foreground)]/75 outline-none transition-all duration-300 ease-in-out"
           aria-label="Scroll to top of page"
         >
           Rawsab Said
-        </a>
+        </Link>
 
         {/* Mobile/tablet right controls */}
         <div className="flex items-center lg:hidden">
@@ -92,20 +93,27 @@ export default function NavigationBar() {
 
         {/* Desktop menu */}
         <div className="hidden lg:flex items-center space-x-6 text-sm text-[var(--foreground)]">
-          <a
-            href="#experience"
+          <Link
+            href="/#experience"
             className="hover:underline inline-flex items-center gap-1 group"
           >
             Resume
             <ArrowUpRight className="w-3 h-3 text-[var(--foreground)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </a>
-          <a
-            href="#projects"
+          </Link>
+          <Link
+            href="/#projects"
             className="hover:underline inline-flex items-center gap-1 group"
           >
             Projects
             <ArrowUpRight className="w-3 h-3 text-[var(--foreground)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </a>
+          </Link>
+          <Link
+            href="/case-studies"
+            className="hover:underline inline-flex items-center gap-1 group"
+          >
+            Case Studies
+            <ArrowUpRight className="w-3 h-3 text-[var(--foreground)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </Link>
           <a
             href="mailto:rsaid@uwaterloo.ca"
             className="hover:underline inline-flex items-center gap-1 group"
@@ -190,24 +198,38 @@ export default function NavigationBar() {
               className="absolute top-full left-0 right-0 bg-[var(--background)] border-b border-[var(--foreground)]/20 backdrop-blur-[4px] lg:hidden"
             >
               <div className="flex flex-col space-y-4 p-4 w-full">
-                <motion.a
+                <motion.div variants={itemVariants}>
+                  <Link
+                    href="/#experience"
+                    className="hover:underline inline-flex items-center gap-1 group"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Resume
+                    <ArrowUpRight className="w-3 h-3 text-[var(--foreground)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </Link>
+                </motion.div>
+                <motion.div variants={itemVariants}>
+                  <Link
+                    href="/#projects"
+                    className="hover:underline inline-flex items-center gap-1 group"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Projects
+                    <ArrowUpRight className="w-3 h-3 text-[var(--foreground)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </Link>
+                </motion.div>
+                <motion.div
                   variants={itemVariants}
-                  href="#experience"
-                  className="hover:underline inline-flex items-center gap-1 group"
-                  onClick={() => setIsMenuOpen(false)}
                 >
-                  Resume
-                  <ArrowUpRight className="w-3 h-3 text-[var(--foreground)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </motion.a>
-                <motion.a
-                  variants={itemVariants}
-                  href="#projects"
-                  className="hover:underline inline-flex items-center gap-1 group"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Projects
-                  <ArrowUpRight className="w-3 h-3 text-[var(--foreground)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </motion.a>
+                  <Link
+                    href="/case-studies"
+                    className="hover:underline inline-flex items-center gap-1 group"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Case Studies
+                    <ArrowUpRight className="w-3 h-3 text-[var(--foreground)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </Link>
+                </motion.div>
                 <motion.a
                   variants={itemVariants}
                   href="mailto:rsaid@uwaterloo.ca"

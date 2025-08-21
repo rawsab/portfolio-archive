@@ -162,3 +162,13 @@ html.dark img[alt='SE Webring'] {
     color 0.3s,
     border-color 0.3s;
 }
+
+/* Glow effect for case study hero images */
+.hero-glow {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dark .hero-glow {
+  opacity: 0.5;
+}
