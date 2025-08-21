@@ -1,4 +1,5 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
@@ -217,9 +218,10 @@ interface CaseStudyProps {
   };
   project: any;
   headers: { level: number; text: string; id: string }[];
+  slug: string;
 }
 
-export default function CaseStudy({ source, frontMatter, project, headers }: CaseStudyProps) {
+export default function CaseStudy({ source, frontMatter, project, headers, slug }: CaseStudyProps) {
   // Animation variants
   const containerVariants = {
     hidden: {},
@@ -245,6 +247,30 @@ export default function CaseStudy({ source, frontMatter, project, headers }: Cas
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <Head>
+        <title>{frontMatter.title} | Rawsab Said</title>
+        <meta name="description" content={frontMatter.description} />
+        <meta name="keywords" content={frontMatter.technologies?.join(', ')} />
+        <meta name="author" content="Rawsab Said" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={`${frontMatter.title} | Rawsab Said`} />
+        <meta property="og:description" content={frontMatter.description} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://rawsab.com/case-studies/${slug}`} />
+        <meta property="og:image" content={frontMatter.heroImage || 'https://rawsab.com/og_image.png'} />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${frontMatter.title} | Rawsab Said`} />
+        <meta name="twitter:description" content={frontMatter.description} />
+        <meta name="twitter:image" content={frontMatter.heroImage || 'https://rawsab.com/og_image.png'} />
+        
+        {/* Additional metadata */}
+        <meta name="article:published_time" content={frontMatter.publishedAt} />
+        <meta name="article:author" content="Rawsab Said" />
+        <link rel="canonical" href={`https://rawsab.com/case-studies/${slug}`} />
+      </Head>
       <NavigationBar />
       
       <motion.main 
@@ -474,6 +500,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       frontMatter: data,
       project,
       headers,
+      slug,
     },
   };
 };
