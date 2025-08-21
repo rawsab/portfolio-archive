@@ -11,7 +11,7 @@ const CaseStudiesPopup = () => {
 
   // Toggle this to true for testing (shows popup every time)
   // Toggle this to false for production (shows popup only once)
-  const TESTING_MODE = true;
+  const TESTING_MODE = false;
   
   // Toggle this to true to test the video loading state
   // Toggle this to false for normal video loading
@@ -136,7 +136,7 @@ const CaseStudiesPopup = () => {
                 {!videoLoaded && (
                   <div className="w-full h-full min-h-[300px] flex items-center justify-center bg-gradient-to-t from-black/70 to-black/30">
                     <div className="text-center">
-                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-4"></div>
+                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-4 mt-20"></div>
                       <p className="text-white/70 text-sm">Loading video...</p>
                     </div>
                   </div>
