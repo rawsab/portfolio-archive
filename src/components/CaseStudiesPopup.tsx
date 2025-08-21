@@ -125,7 +125,7 @@ const CaseStudiesPopup = () => {
                 <h2 className="text-3xl sm:text-4xl font-menocondensed-important text-[var(--foreground)] mb-2 mt-0">
                   Introducing Case Studies
                 </h2>
-                <p className="text-md sm:text-lg text-[var(--foreground)]/70">
+                <p className="text-md sm:text-lg text-[var(--foreground)]/70 tracking-normal">
                   Take a deeper dive into my projects with the new case studies page.
                 </p>
               </div>
@@ -163,14 +163,14 @@ const CaseStudiesPopup = () => {
               <div className="flex flex-col sm:flex-row gap-4 mt-6">
                 <button
                   onClick={handleClose}
-                  className="flex-1 px-auto py-2 bg-[var(--foreground)]/10 hover:cursor-pointer hover:bg-[var(--foreground)]/15 text-[var(--foreground)] rounded-lg transition-colors font-medium"
+                  className="flex-1 px-auto py-2 bg-[var(--foreground)]/10 hover:cursor-pointer hover:bg-[var(--foreground)]/15 text-[var(--foreground)] rounded-lg transition-colors font-medium tracking-tight"
                 >
                   Continue to Site
                 </button>
                 <Link
                   href="/case-studies"
                   onClick={handleClose}
-                  className="flex-1 px-auto py-2 bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--foreground)]/85 rounded-lg transition-colors font-medium flex items-center justify-center gap-2"
+                  className="flex-1 px-auto py-2 bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--foreground)]/85 rounded-lg transition-colors font-medium flex items-center justify-center gap-2 tracking-tight"
                 >
                   Explore Case Studies
                   <ArrowRight className="w-4 h-4" />
