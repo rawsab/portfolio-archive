@@ -31,6 +31,28 @@ export default function Document() {
         <link rel="apple-touch-icon" href="/my-favicon/apple-touch-icon.png" />
         <link rel="manifest" href="/my-favicon/site.webmanifest" />
         
+        {/* Theme initialization script - runs before page renders */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  if (theme === 'light') {
+                    document.documentElement.classList.remove('dark');
+                  } else {
+                    // Default to dark mode if no preference or preference is dark
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch (e) {
+                  // If localStorage is not available, default to dark mode
+                  document.documentElement.classList.add('dark');
+                }
+              })();
+            `,
+          }}
+        />
+        
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-7JQDLM7YY5"></script>
         <script

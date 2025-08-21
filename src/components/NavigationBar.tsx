@@ -9,19 +9,40 @@ import { Sun, Moon } from 'lucide-react';
 export default function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
 
-  // Set dark mode by default
+  // Initialize theme from localStorage or default to dark mode
   useEffect(() => {
-    setDarkMode(true);
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      setDarkMode(false);
+    } else if (savedTheme === 'dark') {
+      setDarkMode(true);
+    } else {
+      // No saved preference, default to dark mode
+      setDarkMode(true);
+      localStorage.setItem('theme', 'dark');
+    }
+    setIsInitialized(true);
   }, []);
 
+  // Apply theme to document
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
+    if (isInitialized) {
+      if (darkMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
     }
-  }, [darkMode]);
+  }, [darkMode, isInitialized]);
+
+  // Handle theme toggle
+  const toggleTheme = () => {
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    localStorage.setItem('theme', newDarkMode ? 'dark' : 'light');
+  };
 
   // Animation variants
   const dropdownVariants = {
@@ -56,7 +77,7 @@ export default function NavigationBar() {
         {/* Mobile/tablet right controls */}
         <div className="flex items-center lg:hidden">
           <button
-            onClick={() => setDarkMode((prev) => !prev)}
+            onClick={toggleTheme}
             aria-label={
               darkMode ? 'Switch to light mode' : 'Switch to dark mode'
             }
@@ -172,7 +193,7 @@ export default function NavigationBar() {
             aria-hidden="true"
           ></div>
           <button
-            onClick={() => setDarkMode((prev) => !prev)}
+            onClick={toggleTheme}
             aria-label={
               darkMode ? 'Switch to light mode' : 'Switch to dark mode'
             }
