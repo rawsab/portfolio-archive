@@ -349,6 +349,7 @@ export default function CaseStudy({ source, frontMatter, project, headers, slug 
                   src={frontMatter.heroImage} 
                   alt={frontMatter.title}
                   className="w-full h-full object-cover"
+                  draggable="false"
                 />
               </div>
             </motion.div>

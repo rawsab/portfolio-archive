@@ -22,7 +22,7 @@ export const featuredProjects: FeaturedProject[] = [
     id: 'questporter',
     title: 'Questporter',
     year: '2025',
-    description: 'Export Waterloo Quest class schedules to any calendar app.',
+    description: 'Export University of Waterloo class schedules from Quest to any calendar app in seconds.',
     image: '/cards/questporter_card.png',
     link: 'https://github.com/rawsab/quest-schedule-exporter',
     tags: ['Next.js', 'Tailwind CSS', 'Shadcn UI', 'Supabase', 'Vercel']
