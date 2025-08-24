@@ -153,10 +153,10 @@ const components = {
     <p className="text-[var(--foreground)]/80 leading-relaxed mb-4 [&>strong]:text-[var(--foreground)] [&>strong]:font-semibold" {...props} />
   ),
   ul: (props: any) => (
-    <ul className="list-disc list-inside text-[var(--foreground)]/80 mb-4 space-y-2 [&>li>strong]:text-[var(--foreground)] [&>li>strong]:font-semibold" {...props} />
+    <ul className="list-disc list-outside text-[var(--foreground)]/80 mb-4 space-y-2 pl-5 [&>li>strong]:text-[var(--foreground)] [&>li>strong]:font-semibold" {...props} />
   ),
   ol: (props: any) => (
-    <ol className="list-decimal list-inside text-[var(--foreground)]/80 mb-4 space-y-2 [&>li>strong]:text-[var(--foreground)] [&>li>strong]:font-semibold" {...props} />
+    <ol className="list-decimal list-outside text-[var(--foreground)]/80 mb-4 space-y-2 pl-5 [&>li>strong]:text-[var(--foreground)] [&>li>strong]:font-semibold" {...props} />
   ),
   li: (props: any) => (
     <li className="text-[var(--foreground)]/80" {...props} />

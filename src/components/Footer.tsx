@@ -48,7 +48,7 @@ export default function Footer() {
               <div className="w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
               <div className="absolute top-0 left-0 w-2 h-2 bg-green-500 rounded-full"></div>
             </div>
-            <span className="text-xs text-[var(--foreground)]/60 font-google-sans-code">UPDATED 12/08/2025</span>
+            <span className="text-xs text-[var(--foreground)]/60 font-google-sans-code">UPDATED 24/08/2025</span>
           </div>
         </div>
         

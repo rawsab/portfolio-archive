@@ -97,15 +97,15 @@ export default function FeaturedProjects() {
         ))}
       </div>
       
-      {/* <motion.div 
-        className="mt-6 pt-4 border-t border-[var(--foreground)]/20 md:text-left max-md:hidden"
+      <motion.div 
+        className="mt-6 pt-4 border-t border-[var(--foreground)]/20 md:text-left max-lg:hidden"
         variants={fadeUpVariants}
       >
         <a
-          href="https://github.com/rawsab"
+          href="/case-studies"
           className="inline-flex items-center text-sm font-medium text-[var(--foreground)] hover:text-[var(--foreground)]/70 transition-colors"
         >
-          View on GitHub
+          See More
           <svg
             className="w-4 h-4 ml-1"
             fill="none"
@@ -120,7 +120,7 @@ export default function FeaturedProjects() {
             />
           </svg>
         </a>
-      </motion.div> */}
+      </motion.div>
     </motion.div>
   );
 }
