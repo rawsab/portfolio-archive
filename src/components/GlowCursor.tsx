@@ -29,7 +29,10 @@ export default function GlowCursor() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      // Add a small delay for smooth trailing effect
+      setTimeout(() => {
+        setPosition({ x: e.clientX, y: e.clientY });
+      }, 50); // 50ms delay
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -43,7 +46,7 @@ export default function GlowCursor() {
     };
 
     // Add event listeners
-    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mousemove', handleMouseMove, { passive: true });
     document.addEventListener('mouseover', handleMouseOver);
     document.addEventListener('mouseout', handleMouseOut);
 
@@ -57,15 +60,16 @@ export default function GlowCursor() {
 
   return (
     <div
-      className="fixed pointer-events-none z-[60] transition-all duration-200 ease-out"
+      className="fixed pointer-events-none z-[60] transition-transform duration-700 ease-in-out"
       style={{
         left: position.x,
         top: position.y,
-        transform: 'translate(-50%, -50%)',
+        transform: 'translate3d(-50%, -50%, 0)',
+        willChange: 'transform',
       }}
     >
       <div
-        className={`rounded-full transition-all duration-300 ease-out ${
+        className={`rounded-full transition-all duration-300 ease-in-out ${
           isPointer ? 'w-22 h-22' : 'w-16 h-16'
         }`}
         style={{
