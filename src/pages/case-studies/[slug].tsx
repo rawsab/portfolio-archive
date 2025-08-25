@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 import * as LucideIcons from 'lucide-react';
 import NavigationBar from '../../components/NavigationBar';
 import Footer from '../../components/Footer';
+import { CommandMenu } from '../../components/CommandMenu';
 import { featuredProjects } from '../../data/featuredData';
 
 // Function to extract headers from MDX content
@@ -451,6 +452,7 @@ export default function CaseStudy({ source, frontMatter, project, headers, slug 
       </motion.main>
       
       <Footer />
+      <CommandMenu />
     </div>
   );
 }

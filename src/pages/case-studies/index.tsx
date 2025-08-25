@@ -9,6 +9,7 @@ import { Wrench } from 'lucide-react';
 import NavigationBar from '../../components/NavigationBar';
 import Footer from '../../components/Footer';
 import FloatingBottomGradient from '../../components/FloatingBottomGradient';
+import { CommandMenu } from '../../components/CommandMenu';
 import { featuredProjects } from '../../data/featuredData';
 
 interface CaseStudyMeta {
@@ -212,6 +213,7 @@ export default function CaseStudies({ caseStudies }: CaseStudiesProps) {
       
       <FloatingBottomGradient />
       <Footer />
+      <CommandMenu />
     </div>
   );
 }
