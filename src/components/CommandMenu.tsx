@@ -134,11 +134,11 @@ export function CommandMenu() {
                 <CommandPrimitive.Input 
                   ref={inputRef}
                   placeholder="Search for a section or page..." 
-                  className="flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-[var(--foreground)]/50 text-[var(--foreground)]"
+                  className="flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-[var(--foreground)]/50 text-[var(--foreground)] tracking-[-0.01em]"
                 />
               </div>
               
-              <CommandPrimitive.List className="max-h-[300px] overflow-y-auto p-2">
+              <CommandPrimitive.List className="max-h-[300px] overflow-y-auto p-2 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[var(--foreground)]/20 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:hover:bg-[var(--foreground)]/30">
                 <CommandPrimitive.Empty className="py-6 text-center text-sm text-[var(--foreground)]/50">
                   No results found.
                 </CommandPrimitive.Empty>
@@ -146,42 +146,42 @@ export function CommandMenu() {
                 <CommandPrimitive.Group heading="Navigation" className="text-[var(--foreground)] [&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-[var(--foreground)]/50">
                   <CommandPrimitive.Item 
                     onSelect={() => runCommand(() => router.push("/"))}
-                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150"
+                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150 font-acuminpro tracking-[-0.01em]"
                   >
                     <Home className="mr-3 h-4 w-4 opacity-60" />
                     <span>Home</span>
                   </CommandPrimitive.Item>
                   <CommandPrimitive.Item 
                     onSelect={() => runCommand(() => router.push("/#about"))}
-                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150"
+                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150 font-acuminpro tracking-[-0.01em]"
                   >
                     <User className="mr-3 h-4 w-4 opacity-60" />
                     <span>About</span>
                   </CommandPrimitive.Item>
                   <CommandPrimitive.Item 
                     onSelect={() => runCommand(() => router.push("/#experience"))}
-                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150"
+                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150 font-acuminpro tracking-[-0.01em]"
                   >
                     <Briefcase className="mr-3 h-4 w-4 opacity-60" />
                     <span>Experience</span>
                   </CommandPrimitive.Item>
                   <CommandPrimitive.Item 
                     onSelect={() => runCommand(() => router.push("/#education"))}
-                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150"
+                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150 font-acuminpro tracking-[-0.01em]"
                   >
                     <GraduationCap className="mr-3 h-4 w-4 opacity-60" />
                     <span>Education</span>
                   </CommandPrimitive.Item>
                   <CommandPrimitive.Item 
                     onSelect={() => runCommand(() => router.push("/#projects"))}
-                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150"
+                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150 font-acuminpro tracking-[-0.01em]"
                   >
                     <FileText className="mr-3 h-4 w-4 opacity-60" />
                     <span>Projects</span>
                   </CommandPrimitive.Item>
                   <CommandPrimitive.Item 
                     onSelect={() => runCommand(() => router.push("/#research"))}
-                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150"
+                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150 font-acuminpro tracking-[-0.01em]"
                   >
                     <Search className="mr-3 h-4 w-4 opacity-60" />
                     <span>Research</span>
@@ -193,35 +193,35 @@ export function CommandMenu() {
                 <CommandPrimitive.Group heading="Case Studies" className="text-[var(--foreground)] [&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-[var(--foreground)]/50">
                   <CommandPrimitive.Item 
                     onSelect={() => runCommand(() => router.push("/case-studies/patchly"))}
-                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150"
+                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150 font-acuminpro tracking-[-0.01em]"
                   >
                     <FileText className="mr-3 h-4 w-4 opacity-60" />
                     <span>Patchly</span>
                   </CommandPrimitive.Item>
                   <CommandPrimitive.Item 
                     onSelect={() => runCommand(() => router.push("/case-studies/questporter"))}
-                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150"
+                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150 font-acuminpro tracking-[-0.01em]"
                   >
                     <FileText className="mr-3 h-4 w-4 opacity-60" />
                     <span>Questporter</span>
                   </CommandPrimitive.Item>
                   <CommandPrimitive.Item 
                     onSelect={() => runCommand(() => router.push("/case-studies/cnsimulator"))}
-                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150"
+                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150 font-acuminpro tracking-[-0.01em]"
                   >
                     <FileText className="mr-3 h-4 w-4 opacity-60" />
                     <span>CNSimulator</span>
                   </CommandPrimitive.Item>
                   <CommandPrimitive.Item 
                     onSelect={() => runCommand(() => router.push("/case-studies/deenboard"))}
-                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150"
+                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150 font-acuminpro tracking-[-0.01em]"
                   >
                     <FileText className="mr-3 h-4 w-4 opacity-60" />
                     <span>Deenboard</span>
                   </CommandPrimitive.Item>
                   <CommandPrimitive.Item 
                     onSelect={() => runCommand(() => router.push("/case-studies/revett"))}
-                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150"
+                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150 font-acuminpro tracking-[-0.01em]"
                   >
                     <FileText className="mr-3 h-4 w-4 opacity-60" />
                     <span>Revett</span>
@@ -233,7 +233,7 @@ export function CommandMenu() {
                 <CommandPrimitive.Group heading="Social" className="text-[var(--foreground)] [&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-[var(--foreground)]/50">
                   <CommandPrimitive.Item 
                     onSelect={() => runCommand(() => window.open("https://github.com/rawsabsaid", "_blank"))}
-                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150"
+                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150 font-acuminpro tracking-[-0.01em]"
                   >
                     <Github className="mr-3 h-4 w-4 opacity-60" />
                     <span>GitHub</span>
@@ -241,7 +241,7 @@ export function CommandMenu() {
                   </CommandPrimitive.Item>
                   <CommandPrimitive.Item 
                     onSelect={() => runCommand(() => window.open("https://linkedin.com/in/rawsabsaid", "_blank"))}
-                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150"
+                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150 font-acuminpro tracking-[-0.01em]"
                   >
                     <Linkedin className="mr-3 h-4 w-4 opacity-60" />
                     <span>LinkedIn</span>
@@ -249,7 +249,7 @@ export function CommandMenu() {
                   </CommandPrimitive.Item>
                   <CommandPrimitive.Item 
                     onSelect={() => runCommand(() => window.open("mailto:rawsab.said@gmail.com", "_blank"))}
-                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150"
+                    className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150 font-acuminpro tracking-[-0.01em]"
                   >
                     <Mail className="mr-3 h-4 w-4 opacity-60" />
                     <span>Email</span>
@@ -259,9 +259,12 @@ export function CommandMenu() {
               </CommandPrimitive.List>
             </CommandPrimitive>
             
-            <div className="flex items-center justify-end p-3 border-t border-[var(--foreground)]/15">
+            <div 
+              className="flex items-center justify-end p-3 border-t border-[var(--foreground)]/15 font-google-sans-code tracking-[-0.025em] cursor-pointer hover:bg-[var(--foreground)]/5 transition-colors duration-150"
+              onClick={handleClose}
+            >
               <span className="text-[var(--foreground)]/50 text-xs">
-                Press ESC to close
+                PRESS <span className="text-[var(--foreground)]">ESC</span> TO CLOSE
               </span>
             </div>
           </div>

@@ -2,14 +2,18 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import ArrowUpRight from '../../public/icons/ArrowUpRight';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Sun, Moon } from 'lucide-react';
+import SearchPrompt from './SearchPrompt';
 
 export default function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const router = useRouter();
 
   // Initialize theme from localStorage or default to dark mode
   useEffect(() => {
@@ -24,6 +28,19 @@ export default function NavigationBar() {
       localStorage.setItem('theme', 'dark');
     }
     setIsInitialized(true);
+  }, []);
+
+  // Check for hover state in URL on page load
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const hoverState = urlParams.get('hover');
+    if (hoverState === 'true') {
+      setIsHovered(true);
+      // Remove the hover parameter from URL after reading it
+      const newUrl = new URL(window.location.href);
+      newUrl.searchParams.delete('hover');
+      window.history.replaceState({}, '', newUrl.toString());
+    }
   }, []);
 
   // Apply theme to document
@@ -42,6 +59,23 @@ export default function NavigationBar() {
     const newDarkMode = !darkMode;
     setDarkMode(newDarkMode);
     localStorage.setItem('theme', newDarkMode ? 'dark' : 'light');
+  };
+
+  // Handle hover state changes and update URL
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    // Add hover state to URL
+    const url = new URL(window.location.href);
+    url.searchParams.set('hover', 'true');
+    window.history.replaceState({}, '', url.toString());
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    // Remove hover state from URL
+    const url = new URL(window.location.href);
+    url.searchParams.delete('hover');
+    window.history.replaceState({}, '', url.toString());
   };
 
   // Animation variants
@@ -64,7 +98,11 @@ export default function NavigationBar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-[var(--background)]/90 backdrop-blur-[4px] pt-2 transition-colors duration-300">
+    <nav 
+      className="sticky top-0 z-50 bg-[var(--background)]/90 backdrop-blur-[4px] pt-2 transition-colors duration-300 relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <div className="font-acuminpro tracking-[-0.025em] w-full px-4 md:px-8 mx-auto pb-2 pt-1 flex justify-between items-center border-b border-[var(--foreground)]/20 lg:max-w-full lg:px-8">
         <Link
           href="/"
@@ -317,6 +355,9 @@ export default function NavigationBar() {
           )}
         </AnimatePresence>
       </div>
+      
+      {/* Search Prompt Banner */}
+      <SearchPrompt isHovered={isHovered} />
     </nav>
   );
 }

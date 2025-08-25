@@ -60,7 +60,7 @@ export default function GlowCursor() {
 
   return (
     <div
-      className="fixed pointer-events-none z-[60] transition-transform duration-700 ease-in-out"
+      className="hidden lg:block fixed pointer-events-none z-[60] transition-transform duration-700 ease-in-out"
       style={{
         left: position.x,
         top: position.y,
