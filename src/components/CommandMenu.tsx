@@ -232,7 +232,7 @@ export function CommandMenu() {
                 
                 <CommandPrimitive.Group heading="Social" className="text-[var(--foreground)] [&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-[var(--foreground)]/50">
                   <CommandPrimitive.Item 
-                    onSelect={() => runCommand(() => window.open("https://github.com/rawsabsaid", "_blank"))}
+                    onSelect={() => runCommand(() => window.open("https://github.com/rawsab", "_blank"))}
                     className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150 font-acuminpro tracking-[-0.01em]"
                   >
                     <Github className="mr-3 h-4 w-4 opacity-60" />
@@ -248,7 +248,7 @@ export function CommandMenu() {
                     <span className="ml-auto text-xs tracking-widest text-[var(--foreground)]/50">↗</span>
                   </CommandPrimitive.Item>
                   <CommandPrimitive.Item 
-                    onSelect={() => runCommand(() => window.open("mailto:rawsab.said@gmail.com", "_blank"))}
+                    onSelect={() => runCommand(() => window.open("mailto:rsaid@uwaterloo.ca", "_blank"))}
                     className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-3 text-sm outline-none hover:bg-[var(--foreground)]/15 aria-selected:bg-[var(--foreground)]/15 aria-selected:bg-opacity-70 aria-selected:text-[var(--foreground)] transition-colors duration-150 font-acuminpro tracking-[-0.01em]"
                   >
                     <Mail className="mr-3 h-4 w-4 opacity-60" />
