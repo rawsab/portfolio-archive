@@ -219,6 +219,7 @@ interface CaseStudyProps {
     publishedAt: string;
     heroImage?: string;
     glowScale?: string;
+    inProgress?: boolean;
   };
   project: any;
   headers: { level: number; text: string; id: string }[];

@@ -5,6 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { motion } from 'framer-motion';
+import { Wrench } from 'lucide-react';
 import NavigationBar from '../../components/NavigationBar';
 import Footer from '../../components/Footer';
 import FloatingBottomGradient from '../../components/FloatingBottomGradient';
@@ -21,6 +22,7 @@ interface CaseStudyMeta {
   featured: boolean;
   order: number;
   heroImage?: string;
+  inProgress?: boolean;
 }
 
 interface CaseStudiesProps {
@@ -127,6 +129,14 @@ export default function CaseStudies({ caseStudies }: CaseStudiesProps) {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Work In Progress Label */}
+                  {caseStudy.inProgress && (
+                    <div className="absolute top-3 right-3 bg-[var(--foreground)]/20 text-[var(--foreground)] px-3 py-1.5 rounded text-xs font-google-sans-code uppercase backdrop-blur-md border border-[var(--foreground)]/20 tracking-normal flex items-center gap-1.5">
+                      <Wrench className="w-3 h-3" />
+                      Work In Progress
+                    </div>
+                  )}
                 </div>
               </div>
               
