@@ -133,7 +133,7 @@ export default function CaseStudies({ caseStudies }: CaseStudiesProps) {
                   
                   {/* Work In Progress Label */}
                   {caseStudy.inProgress && (
-                    <div className="absolute top-3 right-3 bg-[var(--foreground)]/20 text-[var(--foreground)] px-3 py-1.5 rounded text-xs font-google-sans-code uppercase backdrop-blur-md border border-[var(--foreground)]/20 tracking-normal flex items-center gap-1.5">
+                    <div className="absolute top-3 right-3 bg-[#f4f4f5]/20 text-[#f4f4f5] px-3 py-1.5 rounded text-xs font-google-sans-code uppercase backdrop-blur-md border border-[#f4f4f5]/20 tracking-normal flex items-center gap-1.5">
                       <Wrench className="w-3 h-3" />
                       Work In Progress
                     </div>
