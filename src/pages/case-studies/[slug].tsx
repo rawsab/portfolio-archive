@@ -176,6 +176,9 @@ const components = {
   a: (props: any) => (
     <a className="text-[var(--foreground)] hover:text-[var(--foreground)]/80 underline" {...props} />
   ),
+  hr: (props: any) => (
+    <hr className="border-none h-px bg-[var(--foreground)]/20 my-8" {...props} />
+  ),
   FeatureGrid: (props: any) => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
       {props.children}
@@ -215,6 +218,7 @@ interface CaseStudyProps {
     featured: boolean;
     publishedAt: string;
     heroImage?: string;
+    glowScale?: string;
   };
   project: any;
   headers: { level: number; text: string; id: string }[];
@@ -335,8 +339,8 @@ export default function CaseStudy({ source, frontMatter, project, headers, slug 
               style={{ aspectRatio: '12/7' }}
               variants={fadeUpVariants}
             >
-              {/* Glow effect */}
-              <div className="absolute inset-0 rounded-lg blur-xl scale-112 hero-glow">
+              {/* Glow effect - configurable scale from frontmatter.glowScale, defaults to scale-112 */}
+              <div className={`absolute inset-0 rounded-lg blur-xl ${frontMatter.glowScale || 'scale-112'} hero-glow`}>
                 <img 
                   src={frontMatter.heroImage} 
                   alt=""

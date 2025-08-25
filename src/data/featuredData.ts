@@ -16,7 +16,7 @@ export const featuredProjects: FeaturedProject[] = [
     description: 'AI-powered vulnerability scanner with real-time CVE detection and intelligent fix suggestions.',
     image: '/cards/patchly_card.png',
     link: 'https://github.com/rawsab/patchly',
-    tags: ['React', 'AI', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Supabase', 'Vercel']
+    tags: ['React', 'AI', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vercel', 'Python']
   },
   {
     id: 'questporter',
@@ -25,7 +25,7 @@ export const featuredProjects: FeaturedProject[] = [
     description: 'Export University of Waterloo class schedules from Quest to any calendar app in seconds.',
     image: '/cards/questporter_card.png',
     link: 'https://github.com/rawsab/quest-schedule-exporter',
-    tags: ['Next.js', 'Tailwind CSS', 'Shadcn UI', 'Supabase', 'Vercel']
+    tags: ['Next.js', 'Tailwind CSS', 'Shadcn UI', 'Vercel']
   },
   {
     id: 'cnsimulator',
