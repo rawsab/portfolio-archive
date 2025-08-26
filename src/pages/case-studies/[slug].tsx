@@ -13,6 +13,7 @@ import NavigationBar from '../../components/NavigationBar';
 import Footer from '../../components/Footer';
 import { CommandMenu } from '../../components/CommandMenu';
 import { featuredProjects } from '../../data/featuredData';
+import ImageWithCaption from '../../components/ImageWithCaption';
 
 // Function to extract headers from MDX content
 function extractHeaders(content: string) {
@@ -135,13 +136,13 @@ const components = {
   h1: (props: any) => {
     const id = props.children?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
     return (
-      <h1 id={id} className="text-2xl font-medium text-[var(--foreground)] tracking-tight mb-6 mt-8 first:mt-0 scroll-mt-20" {...props} />
+      <h1 id={id} className="text-xl font-semibold text-[var(--foreground)] tracking-tight mb-6 mt-8 first:mt-0 scroll-mt-20" {...props} />
     );
   },
   h2: (props: any) => {
     const id = props.children?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
     return (
-      <h2 id={id} className="text-xl font-medium text-[var(--foreground)] tracking-tight mb-4 mt-8 scroll-mt-20" {...props} />
+      <h2 id={id} className="text-xl font-semibold text-[var(--foreground)] tracking-tight mb-4 mt-8 scroll-mt-20" {...props} />
     );
   },
   h3: (props: any) => {
@@ -180,6 +181,7 @@ const components = {
   hr: (props: any) => (
     <hr className="border-none h-px bg-[var(--foreground)]/20 my-8" {...props} />
   ),
+
   FeatureGrid: (props: any) => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
       {props.children}
@@ -205,6 +207,7 @@ const components = {
       </div>
     );
   },
+  ImageWithCaption: ImageWithCaption,
 };
 
 interface CaseStudyProps {

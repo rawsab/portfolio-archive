@@ -15,7 +15,7 @@ export default function HeroSection() {
         >
           I am a{'\u00A0\u00A0'}
           <span className="font-menocondensed-important italic text-[2rem] sm:text-[2.75rem] underline decoration-[var(--underline)] decoration-2 underline-offset-8">
-            Software Engineer & Designer
+            software engineer & designer
           </span>
           {'\u00A0\u00A0'}
           <br className="hidden sm:block" />
