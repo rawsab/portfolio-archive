@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import FadeInOnView, { fadeUpVariants } from './FadeInOnView';
 import { ArrowDown } from 'lucide-react';
+import ArrowUpRight from '../../public/icons/ArrowUpRight';
 
 export default function HeroSection() {
   return (
@@ -44,6 +45,23 @@ export default function HeroSection() {
           AI-integrated features. <br className="hidden sm:block" />
           Currently studying Software Engineering @ UWaterloo.
         </motion.p>
+        
+        {/* Portfolio link */}
+        <motion.div
+          variants={fadeUpVariants}
+          transition={{ delay: 0.2 }}
+        >
+          <a
+            href="https://www.rawsab.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline inline-flex items-center gap-1 group text-base sm:text-[1rem] text-[var(--foreground)]/70 tracking-[-0.010em]"
+          >
+            View my new portfolio here
+            <ArrowUpRight className="w-3 h-3 text-[var(--foreground)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </a>
+        </motion.div>
+        
         {/* Downwards arrow link */}
         <motion.div
           variants={fadeUpVariants}
