@@ -1,3 +1,4 @@
-# rawsab.com — Portfolio Website
+# archive.rawsab.com — (Archived) Portfolio Website
 
-This is my personal portfolio site, built with **Next.js**, **Tailwind CSS**, and **Framer Motion**.
+View my new personal website at [rawsab.com](https://rawsab.com/). \
+If you're interested in case studies on my personal projects, you can find them here ([archive.rawsab.com](https://archive.rawsab.com/)).
