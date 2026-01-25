@@ -1,5 +1,15 @@
 export const experienceData = [
   {
+    company: 'Palitronica (YC W22)',
+    position: 'ML Engineer Intern',
+    location: 'Waterloo, ON',
+    date: 'Winter 2026',
+    logo: '/logos/palitronica.png',
+    focus: 'Machine Learning (Inference Engine)',
+    tools: 'Python, MLFlow, Docker, Azure CosmosDB, MinIO',
+    link: 'https://palitronica.com/',
+  },
+  {
     company: 'Node App',
     position: 'Software Engineer Intern',
     location: 'Toronto, ON',
